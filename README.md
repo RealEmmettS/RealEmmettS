@@ -19,8 +19,10 @@ Here are some ideas to get you started:
 - 💬 Ask me about **Swift, AWS, HTML**
 - 📫 How to reach me: [**emmett0502@gmail.com**](mailto:emmett0502@Gmail.com)
 
-`let greeting = "Hello!";    
-print(greeting)`
+```
+let greeting = "Hello!";    
+print(greeting)
+```
 
 
 ![coding_GIF](https://media2.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=ecf05e470i2h1c0fbgpxqpxq2z2jn20c63fo4u8ib8ead9jq&rid=giphy.gif)
