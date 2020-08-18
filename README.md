@@ -19,7 +19,7 @@ Here are some ideas to get you started:
 - 💬 Ask me about **Swift, AWS, HTML**
 - 📫 How to reach me: [**emmett0502@gmail.com**](mailto:emmett0502@Gmail.com)
 
-`let greeting = "Hello!"
+`let greeting = "Hello!"    
 print(greeting)`
 
 
