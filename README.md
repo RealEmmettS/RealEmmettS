@@ -20,8 +20,8 @@ Here are some ideas to get you started:
 - 📫 How to reach me: [**emmett0502@gmail.com**](mailto:emmett0502@gmail.com)
 
 ```
-let greeting = "Hello!";    
-print(greeting)
+String greeting = "Hello!";    
+System.out.print(greeting);
 ```
 
 
