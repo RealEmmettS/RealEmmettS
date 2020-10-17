@@ -15,9 +15,9 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-- 🔭 I’m currently working on [**Magic Pantry**](https://magic.emmetts.us)
+- 🔭 I’m currently working on [**Magic Pantry**](https://emmetts.us/MagicPantry)
 - 💬 Ask me about **Swift, AWS, HTML**
-- 📫 How to reach me: [**emmett0502@gmail.com**](mailto:emmett0502@Gmail.com)
+- 📫 How to reach me: [**emmett0502@gmail.com**](mailto:emmett0502@gmail.com)
 
 ```
 let greeting = "Hello!";    
