@@ -17,7 +17,7 @@ Here are some ideas to get you started:
 
 - 🔭 I’m currently working on [**Magic Pantry**](https://emmetts.us/MagicPantry)
 - 💬 Ask me about **Swift, AWS, HTML**
-- 📫 How to reach me: [**emmett0502@gmail.com**](mailto:emmett0502@gmail.com)
+- 📫 How to reach me: [**github@emmetts.dev**](mailto:github@emmetts.dev)
 
 ```
 String greeting = "Hello!";    
