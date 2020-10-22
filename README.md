@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 -->
 
 - 🔭 I’m currently working on [**Magic Pantry**](https://emmetts.us/MagicPantry)
-- 💬 Ask me about **Swift, AWS, HTML**
+- ⚡ Currently know (and am studying) **Swift, HTML, CSS, Python, AWS, Java**
 - 📫 How to reach me: [**github@emmetts.dev**](mailto:github@emmetts.dev)
 
 ```
