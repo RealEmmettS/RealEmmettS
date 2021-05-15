@@ -15,8 +15,8 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-- 🔭  I’m currently working on [**Magic Pantry**](https://github.com/RealEmmettS/Magic-Pantry)
-- ⚡  I currently know (and I'm currently studying) **Swift, HTML, CSS, Bootstrap, Python, AWS, Java, and Firebase**
+- 🔭  I’m currently working on [**Magic Pantry**](https://github.com/RealEmmettS/Magic-Pantry) and [**Gater**](https://www.notion.so/Gater-API-Docs-e7d57bd7180b4605aaab5324a58dd9b3), my custom RESTful API.
+- ⚡  I currently know (and I'm currently studying) **Swift, HTML, CSS, Bootstrap, Python, AWS, GCS, Java, Flask (with Python), and Firebase**
 - 📫  How to reach me: [**github@emmetts.dev**](mailto:github@emmetts.dev)
 
 ```
