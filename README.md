@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-- 🔭  I’m currently working on [**Magic Pantry**](https://github.com/RealEmmettS/Magic-Pantry) and [**Gater**](https://docs.gater.dev/)
+- 🔭  I’m currently working on [**Magic Pantry**](https://github.com/RealEmmettS/Magic-Pantry) and [**Gater**](https://gater.dev/)
 - ⚡  I currently know (and I'm currently studying) **Swift, HTML, CSS, Bootstrap, Python, AWS, GCS, Java, Flask (with Python), and Firebase**
 - 📫  How to reach me: [**github@emmetts.dev**](mailto:github@emmetts.dev)
 
