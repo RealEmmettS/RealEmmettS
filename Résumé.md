@@ -46,5 +46,6 @@ Responsible for running the school store (sales, product management, employee hi
 | **Programming Languages** | HTML / CSS     | Swift           | JavaScript | Python    | Java        |
 | ------------------------- | -------------- | --------------- | ---------- | --------- | ----------- |
 | **Software**              | Microsoft Word | Microsoft Excel | AWS        | GCS       | Firebase    |
+| ------------------------- | -------------- | --------------- | ---------- | --------- | ----------- |
 | **Other**                 | Git            | Linux           | Firebase   | Bootstrap | 3D Printing |
 
