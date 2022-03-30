@@ -18,7 +18,7 @@ Here are some ideas to get you started:
 - 🔭  I’m currently working on [**Magic Pantry**](https://github.com/RealEmmettS/Magic-Pantry) and [**Gater**](https://gater.dev/)
 - ⚡  I currently know (and I'm currently studying) **Swift, HTML, CSS, Bootstrap, Python, JS, C++, AWS, GCS, Java, Flask (with Python), and Firebase**
 - 📫  How to reach me: [**github@emmetts.dev**](mailto:github@emmetts.dev)
-- *Resume [here*](https://www.craft.do/s/cVOJjnDdwcdTbZ)
+- *Resume [**here**](https://www.craft.do/s/cVOJjnDdwcdTbZ)*
 
 ```
 String greeting = "Hello!";    
