@@ -23,6 +23,3 @@ Here are some ideas to get you started:
 String greeting = "Hello!";    
 System.out.println(greeting);
 ```
-
-
-![coding_GIF](https://media2.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif?cid=ecf05e470i2h1c0fbgpxqpxq2z2jn20c63fo4u8ib8ead9jq&rid=giphy.gif)
