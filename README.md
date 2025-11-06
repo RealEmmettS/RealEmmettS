@@ -2,10 +2,10 @@
 
 ### Current Projects
 
-- [Quip Quark](https://quipquark.com) - A free AI chatbot that has internet access.
-- [Personal Website](https://github.com/RealEmmettS/personal-site) - My personal website.
-- [Realtime Image Generation](https://realtime.emmetts.dev) - A web app to interface with ByteDance's realtime SDXL model.
-- [AI Image Editor](https://mgie.emmetts.dev) - A web app to interface with Apple's MGIE Image Editing model.
+- [Qube TX](https://qubetx.com) - The landing page for my freelance business, Qube TX.
+- [Personal Website](https://emmettshaughnessy.com) - My personal website.
+- [URL Shortener](https://qork.me) - A web app designed to make shortening URLs easy and efficient.
+- [ToolDoBox](https://app.tooldobox.com) - A web app designed for, well, everything.
 
 ### Languages & Technologies
 
