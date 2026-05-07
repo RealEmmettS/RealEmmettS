@@ -18,84 +18,95 @@
 <td width="50%">
 
 ### [Qube TX](https://qubetx.com)
-**Freelance Development Studio**
+**Diagnostics Tooling & Web Studio**
 
-Building custom solutions for clients who need reliable, modern web applications.
+A growing ecosystem of Rust-based CLI diagnostics tools (TR-200 / TR-300 machine reports, network and system diagnostics) plus the web surfaces and installer bundles around them. Also where most freelance/client work lives.
 
-`React` `Node.js` `Cloud Infrastructure`
+`Rust` `TypeScript` `Next.js` `CLI Tooling`
 
 </td>
 <td width="50%">
 
 ### [QorkMe](https://qork.me)
-**URL Shortening Service**
+**URL Shortener**
 
-Clean, efficient URL shortening with custom aliases and analytics tracking.
+Custom aliases, analytics, and a clean redirect layer. Currently being rebuilt on a TypeScript stack.
 
-`Full-Stack` `API Design` `Data Management`
+`TypeScript` `Full-Stack` `API Design`
 
 </td>
 </tr>
 <tr>
 <td width="50%">
 
-### [ToolDoBox](https://app.tooldobox.com)
-**Productivity Platform**
+### [Time](https://github.com/RealEmmettS/time)
+**Atomic Clock Web App**
 
-All-in-one toolset for streamlining workflows and managing daily tasks.
+A nicer-looking alternative to time.gov — accurate, fast, and visually pleasant.
 
-`React` `Firebase` `Cloud Functions`
+`JavaScript` `Web` `UX`
 
 </td>
 <td width="50%">
 
 ### [Personal Site](https://emmettshaughnessy.com)
-**Digital Portfolio**
+**Portfolio & Writing**
 
-Professional showcase and technical writing hub.
+Professional showcase, project index, and technical writing. Mid-rebuild on a fresh TypeScript stack.
 
-`Modern Web` `Responsive Design` `Performance`
+`TypeScript` `Next.js` `Vercel`
 
 </td>
 </tr>
 </table>
 
+### Also in the workshop
+Rust system tooling under the `qube-*` umbrella, an Expo/React Native speedtest app, a Shell-based diagnostics OS (`shaughvOS`), Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
+
 ## 💻 Tech Stack
 
 ```mermaid
 graph LR
-    A[Frontend] -->|React| B[Component Architecture]
-    A -->|HTML/CSS| C[Modern UI/UX]
-    D[Backend] -->|Node.js| E[REST APIs]
-    D -->|Python| F[Data Processing]
-    G[Cloud] -->|AWS| H[S3, EC2]
-    G -->|Firebase| I[Real-time DB]
-    G -->|Vercel| J[Edge Deployment]
+    A[Web] -->|TypeScript / Next.js| B[Frontend & SSR]
+    A -->|React Native / Expo| C[Mobile]
+    D[Systems] -->|Rust| E[CLI Diagnostics & Reports]
+    D -->|Shell| F[Lightweight OS Tooling]
+    G[Backend] -->|Node.js| H[APIs]
+    G -->|Python| I[Scripting & Data]
+    J[Cloud] -->|Vercel| K[Edge Deployment]
+    J -->|Cloudflare| L[DNS / CDN]
+    J -->|AWS| M[S3, EC2, SES]
+    J -->|Firebase| N[Realtime / Auth]
 ```
 
 ### Languages
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Shell](https://img.shields.io/badge/Shell-4EAA25?style=flat-square&logo=gnu-bash&logoColor=white)
 ![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
 
 ### Frameworks & Libraries
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Expo](https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![Remotion](https://img.shields.io/badge/Remotion-3178C6?style=flat-square&logo=remotion&logoColor=white)
 
 ### Cloud & Infrastructure
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 
-### Specializations
-- 🤖 **AI & ML Integration** – Building intelligent applications with modern AI tooling
-- 🏗️ **Full-Stack Architecture** – End-to-end application development and deployment
-- ⚡ **Performance Optimization** – Fast, efficient, scalable solutions
-- 🔧 **Technical Consulting** – Problem-solving for complex technical challenges
+### Where my focus is right now
+- 🦀 **Rust diagnostics tooling** – CLI machine reports, network and system diagnostics under the Qube TX umbrella
+- 🌐 **Modern web stacks** – TypeScript + Next.js on Vercel for landing pages, internal tools, and product sites
+- 📱 **Cross-platform mobile** – Expo / React Native experiments (speedtest, utilities)
+- 🤖 **AI-assisted workflows** – pairing Claude / Codex agents into real product development
+- 🔧 **Technical consulting** – pragmatic, end-to-end solutions for client work through Qube TX
 
 ---
 
