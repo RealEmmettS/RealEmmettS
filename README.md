@@ -20,7 +20,7 @@
 ### [Qube TX](https://qubetx.com)
 **Diagnostics Tooling & Web Studio**
 
-A growing ecosystem of Rust-based CLI diagnostics tools (TR-200 / TR-300 machine reports, network and system diagnostics) plus the web surfaces and installer bundles around them. Also where most freelance/client work lives.
+A growing ecosystem of Rust CLI diagnostics tools — `qube-machine-report` (TR-200 / TR-300, now at v3.13.x with Windows polish and VPN-aware reporting), `qube-network-diagnostics` (v3.x, recently overhauled with subcommand syntax and a diagnostic-driven triage loop), and `qube-system-diagnostics` — plus the web surfaces, landing pages, and installer bundles around them. Also where most freelance/client work lives.
 
 `Rust` `TypeScript` `Next.js` `CLI Tooling`
 
@@ -30,9 +30,31 @@ A growing ecosystem of Rust-based CLI diagnostics tools (TR-200 / TR-300 machine
 ### [QorkMe](https://qork.me)
 **URL Shortener**
 
-Custom aliases, analytics, and a clean redirect layer. Currently being rebuilt on a TypeScript stack.
+Custom aliases, click analytics, and a clean redirect layer, now running on a Next.js + Supabase stack with hardened RLS, an admin dashboard, and a Makira-typeset UI.
 
-`TypeScript` `Full-Stack` `API Design`
+`Next.js` `TypeScript` `Supabase` `Tailwind`
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### [shaughvOS](https://github.com/RealEmmettS/shaughvOS)
+**Custom Diagnostics OS**
+
+Lightweight Debian-based diagnostics OS with Shaughv branding. Currently on the v1.20.x line — CLI-first boot, install/startup stabilization, and a shellcheck-gated CI pipeline.
+
+`Shell` `Linux` `Build Pipelines`
+
+</td>
+<td width="50%">
+
+### Dorsey 2026
+**Music Artist Site**
+
+A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4, with shadcn/ui components, Framer Motion choreography, Lenis smooth scroll, and a custom Jazz-Bauhaus design system.
+
+`Next.js 16` `React 19` `Tailwind v4` `Framer Motion`
 
 </td>
 </tr>
@@ -61,7 +83,7 @@ Professional showcase, project index, and technical writing. Mid-rebuild on a fr
 </table>
 
 ### Also in the workshop
-Rust system tooling under the `qube-*` umbrella, an Expo/React Native speedtest app, a Shell-based diagnostics OS (`shaughvOS`), Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
+Web surfaces around the Qube TX ecosystem (`QubeTX_Landing`, `qube-machine-report-homepage`, `qube-reports-executables` for offline installers), an Expo/React Native speedtest app, Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
 
 ## 💻 Tech Stack
 
@@ -76,7 +98,8 @@ graph LR
     J[Cloud] -->|Vercel| K[Edge Deployment]
     J -->|Cloudflare| L[DNS / CDN]
     J -->|AWS| M[S3, EC2, SES]
-    J -->|Firebase| N[Realtime / Auth]
+    J -->|Supabase| N[Postgres / Auth / RLS]
+    J -->|Firebase| O[Realtime / Auth]
 ```
 
 ### Languages
@@ -90,6 +113,9 @@ graph LR
 ### Frameworks & Libraries
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Tailwind](https://img.shields.io/badge/Tailwind_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=flat-square&logo=shadcnui&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
 ![Expo](https://img.shields.io/badge/Expo-000020?style=flat-square&logo=expo&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Remotion](https://img.shields.io/badge/Remotion-3178C6?style=flat-square&logo=remotion&logoColor=white)
@@ -102,8 +128,10 @@ graph LR
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 
 ### Where my focus is right now
-- 🦀 **Rust diagnostics tooling** – CLI machine reports, network and system diagnostics under the Qube TX umbrella
-- 🌐 **Modern web stacks** – TypeScript + Next.js on Vercel for landing pages, internal tools, and product sites
+- 🦀 **Rust diagnostics tooling** – shipping the v3.x lines of `qube-machine-report` and `qube-network-diagnostics` (subcommand syntax, diagnostic-driven triage loops, Windows polish, self-update flow)
+- 🐧 **shaughvOS** – Debian-based diagnostics OS, currently stabilizing the v1.20.x install / boot path with shellcheck-gated CI
+- 🌐 **Modern web stacks** – Next.js 16 / React 19 / Tailwind v4 / shadcn/ui builds for client sites and Qube TX surfaces, deployed on Vercel
+- 🔗 **Full-stack product work** – QorkMe on Next.js + Supabase with hardened RLS, click analytics, and an admin dashboard
 - 📱 **Cross-platform mobile** – Expo / React Native experiments (speedtest, utilities)
 - 🤖 **AI-assisted workflows** – pairing Claude / Codex agents into real product development
 - 🔧 **Technical consulting** – pragmatic, end-to-end solutions for client work through Qube TX
