@@ -20,7 +20,7 @@
 ### [Qube TX](https://qubetx.com)
 **Diagnostics Tooling & Web Studio**
 
-A growing ecosystem of Rust CLI diagnostics tools — `qube-machine-report` (TR-300, now at v3.13.x with Windows polish, VPN-aware Windows IP, Fast Startup uptime annotation, and a `uzers` migration to clear RUSTSEC advisories), `qube-network-diagnostics` (just hit v3.0.x — subcommand syntax, a diagnostic-driven triage loop, and a hardened self-update flow), and `qube-system-diagnostics`. Around them sit the web surfaces (`QubeTX_Landing`, `qube-machine-report-homepage`) and offline installer bundles (`qube-reports-executables`). Also where most freelance/client work lives.
+A growing ecosystem of Rust CLI diagnostics tools — `qube-machine-report` (TR-300, now at v3.13.x with Windows polish, VPN-aware Windows IP, Fast Startup uptime annotation, and a `uzers` migration to clear RUSTSEC advisories), `qube-network-diagnostics` (nd300 v3.0.x — subcommand syntax, a diagnostic-driven triage loop with bounded iterations, and a probe-and-retry self-update chain that prefers cargo when invokable and falls back to the installer with per-attempt diagnostics), and `qube-system-diagnostics`. Around them sit the web surfaces (`QubeTX_Landing`, `qube-machine-report-homepage`), the multi-provider SpeedQX web app (bootstrap CIs, inverse-variance weighted aggregation, RFC 3550 jitter, network-metadata pre-test), and offline installer bundles (`qube-reports-executables`). Also where most freelance/client work lives.
 
 `Rust` `TypeScript` `Next.js` `CLI Tooling`
 
@@ -52,7 +52,7 @@ Lightweight Debian-based diagnostics OS with Shaughv branding. Just shipped v1.2
 ### Dorsey 2026
 **Music Artist Site**
 
-A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4, with shadcn/ui components, Framer Motion choreography, Lenis smooth scroll, and a custom Jazz-Bauhaus design system. Currently recreating the layout and porting over the legacy Squarespace assets.
+A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4, with shadcn/ui components and Framer Motion choreography. Recently pivoted from a custom Jazz-Bauhaus reinterpretation to a faithful recreation of the live leonleedorsey.com visual language — header/footer reworked, home / about / music / store / videos / contact and several press / gear pages rebuilt, mobile nav swapped to a full-screen white sheet, and Squarespace media imported locally to avoid hotlinking. Currently finishing secondary route parity and final QA.
 
 `Next.js 16` `React 19` `Tailwind v4` `Framer Motion`
 
@@ -83,7 +83,7 @@ Professional showcase, project index, and technical writing. Mid-rebuild on a fr
 </table>
 
 ### Also in the workshop
-Web surfaces around the Qube TX ecosystem (`QubeTX_Landing`, `qube-machine-report-homepage`, `qube-reports-executables` for offline installers), an Expo/React Native speedtest app, Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
+Web surfaces around the Qube TX ecosystem (`QubeTX_Landing`, `qube-machine-report-homepage`, `qube-reports-executables` for offline installers), the SpeedQX web speed-test app and a parallel Expo/React Native port (porting the v2.0/v2.1 measurement engine, statistics module, and metric-info UX onto mobile), Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
 
 ## 💻 Tech Stack
 
@@ -128,12 +128,13 @@ graph LR
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 
 ### Where my focus is right now
-- 🦀 **Rust diagnostics tooling** – shipping the v3.x lines of `qube-machine-report` (v3.13.x) and `qube-network-diagnostics` (v3.0.x): subcommand syntax, diagnostic-driven triage loops, Windows polish, VPN-aware reporting, self-update flow
+- 🦀 **Rust diagnostics tooling** – shipping the v3.x lines of `qube-machine-report` (v3.13.x) and `qube-network-diagnostics` (nd300 v3.0.x): subcommand syntax, diagnostic-driven triage loops, Windows polish, VPN-aware reporting, and a probe-and-retry self-update chain that survives missing toolchains
 - 🐧 **shaughvOS** – Debian-based diagnostics OS, just shipped v1.20.0 with install/startup validation and a focus-smoke shellcheck gate
+- 🎵 **Dorsey 2026** – touring artist's site rebuild on Next.js 16 / React 19 / Tailwind v4; mid-port of the live leonleedorsey.com layout with imported Squarespace media
 - 🌐 **Modern web stacks** – Next.js 16 / React 19 / Tailwind v4 / shadcn/ui builds for client sites and Qube TX surfaces, deployed on Vercel
 - 🔗 **Full-stack product work** – QorkMe on Next.js + Supabase with hardened RLS, click analytics, and an admin dashboard
-- 📱 **Cross-platform mobile** – Expo / React Native experiments (speedtest, utilities)
-- 🤖 **AI-assisted workflows** – pairing Claude / Codex agents into real product development; recently moved release pipelines from foreground `gh run watch` to non-blocking Monitor poll-loops
+- 📱 **Cross-platform mobile** – Expo / React Native speedtest porting the SpeedQX accuracy pipeline (bootstrap CIs, inverse-variance weighting, AIM scores, byte-weighted progress) onto iPhone/iPad
+- 🤖 **AI-assisted workflows** – pairing Claude / Codex agents into real product development; release pipelines moved from foreground `gh run watch` to non-blocking Monitor poll-loops, with `gh --jq` keeping the diff portable across machines without local jq
 - 🔧 **Technical consulting** – pragmatic, end-to-end solutions for client work through Qube TX
 
 ---
