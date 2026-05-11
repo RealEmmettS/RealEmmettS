@@ -20,7 +20,7 @@
 ### [Qube TX](https://qubetx.com)
 **Diagnostics Tooling & Web Studio**
 
-A growing ecosystem of Rust CLI diagnostics tools — `qube-machine-report` (TR-300, now at v3.13.x with Windows polish, VPN-aware Windows IP, Fast Startup uptime annotation, and a `uzers` migration to clear RUSTSEC advisories), `qube-network-diagnostics` (nd300 v3.0.x — subcommand syntax, a diagnostic-driven triage loop with bounded iterations, and a probe-and-retry self-update chain that prefers cargo when invokable and falls back to the installer with per-attempt diagnostics), and `qube-system-diagnostics`. Around them sit the web surfaces (`QubeTX_Landing`, `qube-machine-report-homepage`), the multi-provider SpeedQX web app (bootstrap CIs, inverse-variance weighted aggregation, RFC 3550 jitter, network-metadata pre-test), and offline installer bundles (`qube-reports-executables`). Also where most freelance/client work lives.
+A growing ecosystem of Rust CLI diagnostics tools, now all published to crates.io under canonical names: `qube-machine-report` (TR-300, v3.14.x — the canonical `tr300` crate with automated crates publish from main, CI version checks, and a chained installer that also writes the shell-profile alias and auto-run line), `qube-network-diagnostics` (nd300 v3.0.x — evidence-driven fix-loop with per-action stabilization windows, OS-aware action registry, platform network-state preservation, and a cargo-first / installer-fallback self-update chain), and `qube-system-diagnostics` (SD-300, shipped as the `tr300-tui` crate, with a stabilized updater and runner-compatible release metadata). Around them sit the web surfaces (`QubeTX_Landing`, `qube-machine-report-homepage` with per-platform install one-liners and admin/sudo notes), the multi-provider SpeedQX web app (bootstrap CIs, inverse-variance weighted aggregation, RFC 3550 jitter), and offline installer bundles (`qube-reports-executables`). Also where most freelance/client work lives.
 
 `Rust` `TypeScript` `Next.js` `CLI Tooling`
 
@@ -30,7 +30,7 @@ A growing ecosystem of Rust CLI diagnostics tools — `qube-machine-report` (TR-
 ### [QorkMe](https://qork.me)
 **URL Shortener**
 
-Custom aliases, click analytics, and a clean redirect layer, now running on a Next.js + Supabase stack with hardened RLS, an admin dashboard, and a Makira-typeset UI.
+Custom aliases, click analytics, and a clean redirect layer on a Next.js + Supabase stack. Recently hardened Supabase RLS (INSERT policy on clicks, `SECURITY DEFINER` increment, owner-only UPDATE/DELETE, revoked TRUNCATE from anon/authenticated), consolidated to a Makira-only typeface, and refreshed the admin dashboard.
 
 `Next.js` `TypeScript` `Supabase` `Tailwind`
 
@@ -61,12 +61,12 @@ A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4
 <tr>
 <td width="50%">
 
-### [Time](https://github.com/RealEmmettS/time)
-**Atomic Clock Web App**
+### Magic Pantry
+**Cross-Platform Pantry App**
 
-A nicer-looking alternative to time.gov — accurate, fast, and visually pleasant.
+Iterative rebuild of the Magic Pantry app on a self-hosted Supabase backend (Postgres + Auth + RLS + Realtime), Expo SDK 55 / React Native 0.83 / React 19.2 / React Navigation v7 / TanStack Query v5. AI features (item categorization, recipe generation, URL recipe import) run through four Anthropic + Firecrawl edge functions; account self-service (forgot/reset/change password, change username, signup-confirmation flow with resend) is now wired end-to-end via `magicpantry://` deep links for App Store launch.
 
-`JavaScript` `Web` `UX`
+`Expo` `React Native` `Supabase` `Anthropic`
 
 </td>
 <td width="50%">
@@ -83,7 +83,7 @@ Professional showcase, project index, and technical writing. Mid-rebuild on a fr
 </table>
 
 ### Also in the workshop
-Web surfaces around the Qube TX ecosystem (`QubeTX_Landing`, `qube-machine-report-homepage`, `qube-reports-executables` for offline installers), the SpeedQX web speed-test app and a parallel Expo/React Native port (porting the v2.0/v2.1 measurement engine, statistics module, and metric-info UX onto mobile), Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
+Web surfaces around the Qube TX ecosystem (`QubeTX_Landing`, `qube-machine-report-homepage`, `qube-reports-executables` for offline installers), the SpeedQX web speed-test app and its parallel Expo/React Native port (v2.0/v2.1 measurement engine, statistics module, and metric-info UX on mobile), `shaughv_vintage` (vintage-leaning personal portfolio with a Pretext-powered responsive text layer and a consolidated a11y pass), [Time](https://github.com/RealEmmettS/time) (atomic-clock alternative to time.gov), Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, qrgen, csv tools, countdown apps).
 
 ## 💻 Tech Stack
 
@@ -128,12 +128,13 @@ graph LR
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
 
 ### Where my focus is right now
-- 🦀 **Rust diagnostics tooling** – shipping the v3.x lines of `qube-machine-report` (v3.13.x) and `qube-network-diagnostics` (nd300 v3.0.x): subcommand syntax, diagnostic-driven triage loops, Windows polish, VPN-aware reporting, and a probe-and-retry self-update chain that survives missing toolchains
-- 🐧 **shaughvOS** – Debian-based diagnostics OS, just shipped v1.20.0 with install/startup validation and a focus-smoke shellcheck gate
+- 🦀 **Rust diagnostics tooling** – shipping the v3.x lines of `qube-machine-report` (TR-300 v3.14.x, now the canonical `tr300` crate on crates.io), `qube-network-diagnostics` (nd300 v3.0.x with evidence-driven fix safety), and `qube-system-diagnostics` (SD-300 via the `tr300-tui` crate), all on an automated crates publish pipeline with CI version checks and a cargo-first / installer-fallback self-update chain
+- 🥫 **Magic Pantry** – Expo + Supabase rebuild of the pantry/shopping-list app: Postgres with private-schema RLS helpers, Realtime, four Anthropic + Firecrawl edge functions for categorization / recipe generation / URL recipe import, and full account self-service flows for App Store launch
+- 🐧 **shaughvOS** – Debian-based diagnostics OS, just shipped v1.20.0 with install/startup validation, a focus-smoke shellcheck gate, CLI-first boot, working desktop shortcuts, Tailscale + Tor Browser pre-installs, and an `autologin` command decoupled from `desktop on/off`
 - 🎵 **Dorsey 2026** – touring artist's site rebuild on Next.js 16 / React 19 / Tailwind v4; mid-port of the live leonleedorsey.com layout with imported Squarespace media
-- 🌐 **Modern web stacks** – Next.js 16 / React 19 / Tailwind v4 / shadcn/ui builds for client sites and Qube TX surfaces, deployed on Vercel
+- 🌐 **Modern web stacks** – Next.js 16 / React 19 / Tailwind v4 / shadcn/ui builds for client sites and Qube TX surfaces (including a refreshed `qube-machine-report-homepage` with chained one-liner installers), deployed on Vercel
 - 🔗 **Full-stack product work** – QorkMe on Next.js + Supabase with hardened RLS, click analytics, and an admin dashboard
-- 📱 **Cross-platform mobile** – Expo / React Native speedtest porting the SpeedQX accuracy pipeline (bootstrap CIs, inverse-variance weighting, AIM scores, byte-weighted progress) onto iPhone/iPad
+- 📱 **Cross-platform mobile** – Expo / React Native across Magic Pantry and a SpeedQX port carrying over the bootstrap CIs, inverse-variance weighting, AIM scores, and byte-weighted progress from the web app onto iPhone/iPad
 - 🤖 **AI-assisted workflows** – pairing Claude / Codex agents into real product development; release pipelines moved from foreground `gh run watch` to non-blocking Monitor poll-loops, with `gh --jq` keeping the diff portable across machines without local jq
 - 🔧 **Technical consulting** – pragmatic, end-to-end solutions for client work through Qube TX
 
