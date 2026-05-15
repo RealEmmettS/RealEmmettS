@@ -271,17 +271,6 @@ mindmap
 
 </div>
 
-<br>
-
-<div align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-trophy.vercel.app/?username=RealEmmettS&theme=chalk&no-frame=true&no-bg=true&column=7&rank=SECRET,SSS,SS,S,AAA,AA,A&margin-w=4">
-  <img alt="GitHub trophies" src="https://github-profile-trophy.vercel.app/?username=RealEmmettS&theme=flat&no-frame=true&no-bg=true&column=7&rank=SECRET,SSS,SS,S,AAA,AA,A&margin-w=4">
-</picture>
-
-</div>
-
 ---
 
 ## COLOPHON
@@ -295,7 +284,7 @@ This profile is a working demo of what GitHub's markdown renderer and HTML sanit
 
 | Technique | Where it's used here |
 |---|---|
-| `<picture>` + `prefers-color-scheme` | Hero banner, typing SVG, streak card, top-langs card, activity graph, trophy row, footer banner |
+| `<picture>` + `prefers-color-scheme` | Hero banner, typing SVG, streak card, top-langs card, activity graph, footer banner |
 | GFM alert (`> [!NOTE]`) | The `NOW` block |
 | `<details>` / `<summary>` (interactive) | TOC, workshop list, focus deep-dive, this colophon |
 | Mermaid `mindmap` (themed `forest`) | `STACK` diagram |
@@ -304,7 +293,7 @@ This profile is a working demo of what GitHub's markdown renderer and HTML sanit
 | `<kbd>` semantic tag | TOC summary chip |
 | Camo-proxied animated SVGs | Capsule banner (SMIL `fadeIn`), typing SVG (CSS animation) |
 | Live dynamic shields | Public repos and public gists pulled from the GitHub API via `dynamic/json` queries; followers, last-push, stars, total stars, following pulled from shields' GitHub endpoints |
-| Live widget cards | `komarev` views, github-readme-streak-stats, top-langs (size + count blended for recency), activity-graph, profile-trophy |
+| Live widget cards | `komarev` views, github-readme-streak-stats, top-langs (size + count blended for recency), activity-graph |
 | Custom-themed shields | Every badge tuned to a two-color palette: forest `#204F20`, cream `#F5E0C5` |
 | `<table>` for grid layout | 2&times;3 projects, paired streak + languages |
 | HTML comments | Source-only annotations at the top of this file |
