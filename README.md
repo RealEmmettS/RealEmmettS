@@ -56,9 +56,9 @@ I build full-stack products, Rust diagnostics, and the systems that ship them. C
 > [!NOTE]
 > **MAY 2026, actively shipping**
 >
-> &middot; **TR-300 v3.14.x**, Windows hardening (vswhere + winget MSVC preflight, Display-formatted errors)
-> &middot; **Magic Pantry**, Phase H account self-service + sharing hardening for App Store launch
-> &middot; **Dorsey 2026**, secondary-route parity and final QA on the Next.js 16 / React 19 rebuild
+> &middot; **TR-300 v3.15.x**, four-installer Windows distribution model with MSI / EXE-aware self-update
+> &middot; **Magic Pantry**, Phase H account self-service + sharing hardening on the new `magicPantry_2026` Expo / Supabase rebuild
+> &middot; **shaughvOS v1.20.0**, install + startup validation behind a focus-smoke shellcheck gate
 
 ---
 
@@ -73,7 +73,7 @@ I build full-stack products, Rust diagnostics, and the systems that ship them. C
 
 `Rust` `TypeScript` `Next.js` `CLI`
 
-A growing ecosystem of Rust CLI diagnostics tools, all published to crates.io under canonical names. TR-300 is on the v3.14.x line as the `tr300` crate, recently hardened for Windows: a vswhere preflight that auto-installs MSVC Build Tools via winget so `cargo install` succeeds on a fresh machine, an execution-policy preflight, and a Display-formatted error path that maps native error codes to actionable advice. [`qube-network-diagnostics`](https://github.com/QubeTX/qube-network-diagnostics) (nd300 v3.0.x) ships hardened network-fix safety, an evidence-driven fix-loop with per-action stabilization windows, and a cargo-first / installer-fallback self-update chain that cleans up non-cargo installs on upgrade. [`qube-system-diagnostics`](https://github.com/QubeTX/qube-system-diagnostics) (SD-300, published as the `tr300-tui` crate) has a stabilized updater and runner-compatible release metadata. Around the CLIs sit the web surfaces: [`QubeTX_Landing`](https://github.com/QubeTX/QubeTX_Landing) and [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage) (per-platform install one-liners, admin/sudo notes, and a chained `tr300 install` that writes the shell-profile alias and auto-run line in one paste), plus the multi-provider [SpeedQX](https://github.com/QubeTX/speedtest) web app (bootstrap CIs, inverse-variance weighted aggregation, RFC 3550 jitter) and offline installer bundles ([`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables)). Also where most freelance / client work lives.
+A growing ecosystem of Rust CLI diagnostics tools, all published to crates.io under canonical names. TR-300 is on the v3.15.x line as the `tr300` crate ([`qube-machine-report`](https://github.com/QubeTX/qube-machine-report)), shipping a four-installer Windows distribution model (MSI / EXE / winget / cargo) with MSI/EXE-aware self-update that knows which installer flavor is running and routes upgrades correctly. The v3.14.x line that preceded it locked in the Windows preflight chain: a vswhere check that auto-installs MSVC Build Tools via winget, an execution-policy preflight, and a Display-formatted error path mapping native error codes to actionable advice. [`qube-network-diagnostics`](https://github.com/QubeTX/qube-network-diagnostics) (nd300 v3.0.x) ships hardened network-fix safety, an evidence-driven fix-loop with per-action stabilization windows, an automated crates-publish pipeline from `main`, and a cargo-first / installer-fallback self-update chain that cleans up non-cargo installs on upgrade. [`qube-system-diagnostics`](https://github.com/QubeTX/qube-system-diagnostics) (SD-300, republished as the canonical `tr300-tui` crate) has a stabilized updater and runner-compatible release metadata. Around the CLIs sit the web surfaces: [`QubeTX_Landing`](https://github.com/QubeTX/QubeTX_Landing) and [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage) (wrapper-script one-liners across all platforms, per-installer TR-300 buttons, Windows MSVC auto-install, and a chained `tr300 install` that writes the shell-profile alias and auto-run line in one paste), plus the multi-provider [SpeedQX](https://github.com/QubeTX/speedtest) web app (bootstrap CIs, inverse-variance weighted aggregation, RFC 3550 jitter) and offline installer bundles ([`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables)). Also where most freelance / client work lives.
 
 </td>
 <td width="50%" valign="top">
@@ -83,7 +83,7 @@ A growing ecosystem of Rust CLI diagnostics tools, all published to crates.io un
 
 `Next.js` `TypeScript` `Supabase` `Tailwind`
 
-Custom aliases, click analytics, and a clean redirect layer on a Next.js + Supabase stack. Hardened Supabase RLS (INSERT policy on clicks, `SECURITY DEFINER` increment, owner-only UPDATE/DELETE, revoked TRUNCATE from anon/authenticated), bounded the URL redirect cache, optimized AdminLinksTable maxClicks, consolidated to a Makira-only typeface, and refreshed the admin dashboard.
+Custom aliases, click analytics, and a clean redirect layer on a Next.js + Supabase stack. Earlier this year the Supabase RLS was hardened end-to-end (INSERT policy on clicks, `SECURITY DEFINER` increment, owner-only UPDATE/DELETE, revoked TRUNCATE from anon/authenticated), the URL redirect cache was bounded with FIFO eviction, an O(N)-fix landed on AdminLinksTable maxClicks, the typography was consolidated to Makira-only, and the admin dashboard was refreshed. Currently stable and resting between sprints.
 
 </td>
 </tr>
@@ -105,7 +105,7 @@ Lightweight Debian-based diagnostics OS with Shaughv branding. The v1.20.0 line 
 
 `Next.js 16` `React 19` `Tailwind v4` `Framer Motion`
 
-A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4, with shadcn/ui components and Framer Motion choreography. Pivoted from a custom Jazz-Bauhaus reinterpretation to a faithful recreation of the live leonleedorsey.com visual language: header / footer reworked, home / about / music / store / videos / contact and several press / gear pages rebuilt, mobile nav swapped to a full-screen white sheet, and Squarespace media imported locally to avoid hotlinking. Currently in secondary route parity and final QA.
+A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4, with shadcn/ui components and Framer Motion choreography. Pivoted from a custom Jazz-Bauhaus reinterpretation to a faithful recreation of the live leonleedorsey.com visual language: header / footer reworked, home / about / music / store / videos / contact and several press / gear pages rebuilt, mobile nav swapped to a full-screen white sheet, and Squarespace media imported locally to avoid hotlinking. Site layout recreate + Squarespace asset import landed early May; currently in a quiet polishing stretch before handoff.
 
 </td>
 </tr>
@@ -117,7 +117,7 @@ A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4
 
 `Expo` `React Native` `Supabase` `Anthropic`
 
-Full rebuild of the Magic Pantry app, migrated off the prior Replit + Express + Drizzle + Modelfarm stack onto Supabase (Postgres + Auth + RLS + Realtime) with Expo SDK 55 / React Native 0.83 / React 19.2 / React Navigation v7 / TanStack Query v5. AI features (item categorization on Claude Haiku 4.5, recipe generation on Sonnet 4.6, URL recipe import via Firecrawl v2 + Sonnet 4.6, plus a service-role `delete-account` for App Store compliance) run through edge functions. Phase H wired full account self-service: forgot / reset / change password, change username, signup-confirmation flow with 60s-cooldown resend, end-to-end via `magicpantry://` deep links for App Store launch, and tightened sharing so non-owner projections drop emails entirely and `findUserByUsernameOrEmail` returns username + id only. RLS helpers live in a `private` schema, `citext` was moved out of `public`, and usernames are `citext` for case-insensitive uniqueness.
+Full rebuild of the Magic Pantry app, lifted out of the prior Replit + Express + Drizzle + Modelfarm stack and into the new `magicPantry_2026` codebase on Supabase (Postgres + Auth + RLS + Realtime) with Expo SDK 55 / React Native 0.83 / React 19.2 / React Navigation v7 / TanStack Query v5. AI features (item categorization on Claude Haiku 4.5, recipe generation on Sonnet 4.6, URL recipe import via Firecrawl v2 + Sonnet 4.6, plus a service-role `delete-account` for App Store compliance) run through edge functions. Phase H wired full account self-service: forgot / reset / change password, change username, signup-confirmation flow with 60s-cooldown resend, end-to-end via `magicpantry://` deep links for App Store launch, and tightened sharing so non-owner projections drop emails entirely and `findUserByUsernameOrEmail` returns username + id only. RLS helpers live in a `private` schema, `citext` was moved out of `public`, and usernames are `citext` for case-insensitive uniqueness.
 
 </td>
 <td width="50%" valign="top">
@@ -178,7 +178,7 @@ mindmap
 |        | **Feb** | Magic Pantry, Supabase migration |
 |        | **Mar** | shaughvOS v1.18, CLI-first boot |
 | **Q2** | **Apr** | Magic Pantry Phase G, auth flows |
-|        | **May** | TR-300 v3.14 Windows, Magic Pantry Phase H, Dorsey 2026 port |
+|        | **May** | TR-300 v3.15 Windows distribution, Magic Pantry Phase H, shaughvOS v1.20 |
 
 <br>
 
@@ -212,12 +212,12 @@ mindmap
 
 &nbsp;
 
-- **TR-300 Windows hardening.** On the v3.14.x line for the `tr300` crate: vswhere preflight that auto-installs MSVC Build Tools via winget so cargo install succeeds on a fresh box, an execution-policy preflight, and a Display-formatted error path that maps native error codes to actionable advice. The TR-300 install one-liner now chains `tr300 install` so a single paste also writes the shell-profile alias and auto-run line.
-- **Magic Pantry.** Replit to Supabase migration plus Phase H: account self-service (forgot / reset / change password, change username, signup-confirmation flow with 60s-cooldown resend, `magicpantry://` deep links) and a sharing-hardening pass that scopes shared-list member projections to usernames-only and keeps emails out of the user-lookup API. RLS helpers in a `private` schema, `citext` moved out of `public`, Realtime, and Anthropic + Firecrawl edge functions for categorization / recipe generation / URL recipe import / account deletion.
+- **TR-300 Windows distribution.** On the v3.15.x line for the `tr300` crate: a four-installer Windows distribution model (MSI / EXE / winget / cargo) with MSI/EXE-aware self-update that detects the active installer flavor and routes upgrades through the matching channel. The v3.14.x line that came just before it locked in the Windows preflight chain (vswhere + winget MSVC auto-install, execution-policy preflight, and Display-formatted error advisor mapping native error codes to actionable advice). The install one-liners now chain `tr300 install` so a single paste also writes the shell-profile alias and auto-run line.
+- **Magic Pantry.** Replit to Supabase migration relocated into the new `magicPantry_2026` codebase, plus Phase H: account self-service (forgot / reset / change password, change username, signup-confirmation flow with 60s-cooldown resend, `magicpantry://` deep links) and a sharing-hardening pass that scopes shared-list member projections to usernames-only and keeps emails out of the user-lookup API. RLS helpers in a `private` schema, `citext` moved out of `public`, Realtime, and Anthropic + Firecrawl edge functions for categorization / recipe generation / URL recipe import / account deletion.
 - **nd300 + SD-300.** `qube-network-diagnostics` v3.0.x hardened the network-fix loop with per-action stabilization windows and a cargo-first / installer-fallback self-update chain that cleans up non-cargo installs on upgrade; `qube-system-diagnostics` republished as the canonical `tr300-tui` crate with stabilized updater and runner-compatible release metadata. Both on an automated crates-publish pipeline with CI version checks.
 - **shaughvOS.** Debian-based diagnostics OS on the v1.20.0 line: install / startup validation, a focus-smoke shellcheck gate, release-newline check, CLI-first boot, working desktop shortcuts via `/usr/local/bin/` symlinks, Tailscale + Tor Browser pre-installs, and an `autologin` command decoupled from `desktop on/off`.
-- **Dorsey 2026.** Touring artist's site rebuild on Next.js 16 / React 19 / Tailwind v4; in secondary route parity and final QA on the leonleedorsey.com port with imported Squarespace media.
-- **Modern web stacks.** Next.js 16 / React 19 / Tailwind v4 / shadcn/ui builds for client sites and Qube TX surfaces (refreshed `qube-machine-report-homepage` with the chained one-liner installer, MSVC auto-install preflight on Windows, and per-platform admin / sudo notes), deployed on Vercel.
+- **Dorsey 2026.** Touring artist's site rebuild on Next.js 16 / React 19 / Tailwind v4; the leonleedorsey.com layout recreate + Squarespace asset import landed early May, with the port now in a quiet polishing stretch before handoff.
+- **Modern web stacks.** Next.js 16 / React 19 / Tailwind v4 / shadcn/ui builds for client sites and Qube TX surfaces (refreshed `qube-machine-report-homepage` with wrapper-script one-liners across all platforms, per-installer TR-300 buttons for the four-installer Windows distribution, MSVC auto-install preflight on Windows, and per-platform admin / sudo notes), deployed on Vercel.
 - **Full-stack product work.** QorkMe on Next.js + Supabase with hardened RLS (INSERT policy on clicks, `SECURITY DEFINER` increment, owner-only writes, revoked TRUNCATE), a bounded URL redirect cache with FIFO eviction, an O(N)-fix on `AdminLinksTable` maxClicks, and a consolidated Makira-only typography pass.
 - **Cross-platform mobile.** Expo / React Native across Magic Pantry and the SpeedQX port carrying the v2.0 technician-grade accuracy overhaul (bootstrap CIs, inverse-variance weighting, AIM scores, byte-weighted progress) from the web app onto iPhone / iPad.
 - **AI-assisted workflows.** Pairing Claude / Codex agents into real product development; release pipelines moved from foreground `gh run watch` to non-blocking Monitor poll-loops, with `gh --jq` keeping the diff portable across machines without local jq.
