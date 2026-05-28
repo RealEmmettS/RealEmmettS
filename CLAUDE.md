@@ -111,7 +111,7 @@ For each section: what content lives there, what changes on each refresh, what s
   - "Things the sanitizer blocks that this respects" paragraph. Mostly static.
   - "Deferred to a future automation pass" paragraph. Update when a deferred item is added or shipped.
   - Source links.
-- **Footer capsule banner**: "BUILDING RELIABLE SYSTEMS / EMMETT@EMMETTS.DEV · EMMETTSHAUGHNESSY.COM". Static unless contact info changes.
+- **Footer capsule banner**: "BUILDING RELIABLE SYSTEMS / HEY@EMMETTS.DEV · EMMETTSHAUGHNESSY.COM". Static unless contact info changes.
 
 ---
 
