@@ -86,7 +86,7 @@ Locked-in reference, verified against the `html-pipeline` sanitizer source and G
   - Two-clause connection → period (split sentence) or colon (if explanatory)
   - List item separator → comma or mid-dot (`·`)
   - Range or pairing → comma or slash
-- **Mid-dot (`·` / `&middot;`) is the inline separator** for metadata pairs and list-style strings, e.g., `EMMETT@EMMETTS.DEV · EMMETTSHAUGHNESSY.COM`, `bootstrap CIs · inverse-variance weighting · AIM scores`.
+- **Mid-dot (`·` / `&middot;`) is the inline separator** for metadata pairs and list-style strings, e.g., `HEY@EMMETTS.DEV · EMMETTSHAUGHNESSY.COM`, `bootstrap CIs · inverse-variance weighting · AIM scores`.
 - **Slash (`/`)** is the separator for related-but-distinct items in inline lists, e.g., `Next.js / React / Tailwind`, `forgot / reset / change password`.
 - **No exclamation marks** except where a markdown image syntax requires one (`![alt](src)`).
 - **End every bullet with a period** in the focus list. Each bullet is a complete sentence.
@@ -374,8 +374,8 @@ The technique-catalogue table is the heart of the colophon. Add a row whenever a
 
 ```html
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=204F20&height=140&section=footer&text=BUILDING+RELIABLE+SYSTEMS&fontColor=F5E0C5&fontSize=22&fontAlignY=70&desc=EMMETT%40EMMETTS.DEV+%C2%B7+EMMETTSHAUGHNESSY.COM&descSize=12&descAlignY=88&descAlign=50">
-  <img alt="Building reliable systems · emmett@emmetts.dev · emmettshaughnessy.com" src="https://capsule-render.vercel.app/api?type=waving&color=F5E0C5&height=140&section=footer&text=BUILDING+RELIABLE+SYSTEMS&fontColor=204F20&fontSize=22&fontAlignY=70&desc=EMMETT%40EMMETTS.DEV+%C2%B7+EMMETTSHAUGHNESSY.COM&descSize=12&descAlignY=88&descAlign=50">
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=204F20&height=140&section=footer&text=BUILDING+RELIABLE+SYSTEMS&fontColor=F5E0C5&fontSize=22&fontAlignY=70&desc=HEY%40EMMETTS.DEV+%C2%B7+EMMETTSHAUGHNESSY.COM&descSize=12&descAlignY=88&descAlign=50">
+  <img alt="Building reliable systems · hey@emmetts.dev · emmettshaughnessy.com" src="https://capsule-render.vercel.app/api?type=waving&color=F5E0C5&height=140&section=footer&text=BUILDING+RELIABLE+SYSTEMS&fontColor=204F20&fontSize=22&fontAlignY=70&desc=HEY%40EMMETTS.DEV+%C2%B7+EMMETTSHAUGHNESSY.COM&descSize=12&descAlignY=88&descAlign=50">
 </picture>
 ```
 
