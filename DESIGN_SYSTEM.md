@@ -16,6 +16,7 @@ These are non-negotiable. If a future change violates any of them, the change is
 4. **No GitHub Actions in this repo.** Automation that refreshes project content lives elsewhere and pushes here. Do not add `.github/workflows/`.
 5. **Sanitizer-safe HTML only.** No inline `<svg>`, `<script>`, `<style>`, `<iframe>`, `<form>`, `<button>`, `<video>`, `<audio>`. No `class=`, `style=`, or `target="_blank"` attributes (all silently stripped). See [GitHub renderer constraints](#github-renderer-constraints) below.
 6. **Curly apostrophes are not required here.** The SHAUGHV master design system requires curly apostrophes in portfolio copy, but the external automation that refreshes this README writes straight apostrophes and would clobber any curly ones. Use straight `'` and `"` so the page stays consistent between refreshes.
+7. **Readability over density.** No wall-of-text paragraphs anywhere. If a section has more than ~4 sentences of continuous prose without a paragraph break, a bold inline lede, a sub-bullet, or a `<br><br>` separator, it is too dense and must be chunked. The README is read as a single scroll: every block needs visual breathing room, and the eye needs scanning anchors (bold ledes, sub-bullets, paragraph breaks) every 2-4 sentences. This rule applies to the `NOW` block, the `CURRENT WORK` project cards, the workshop list, the release timeline cells, and the focus deep-dive bullets. Concrete shape per surface is documented in [Component templates](#component-templates).
 
 ---
 
@@ -89,7 +90,7 @@ Locked-in reference, verified against the `html-pipeline` sanitizer source and G
 - **Slash (`/`)** is the separator for related-but-distinct items in inline lists, e.g., `Next.js / React / Tailwind`, `forgot / reset / change password`.
 - **No exclamation marks** except where a markdown image syntax requires one (`![alt](src)`).
 - **End every bullet with a period** in the focus list. Each bullet is a complete sentence.
-- **Project descriptions in the table** are one continuous paragraph, not bulleted. Code names get backticks (`` `tr300` ``, `` `cargo install` ``, `` `magicpantry://` ``). Cross-repo references use markdown links to the actual GitHub URL.
+- **Project descriptions in the table** are broken into multiple short paragraphs separated by blank lines, not one wall of text. Lead with a 1-2 sentence "what it is" paragraph, then 2-3 follow-up paragraphs each scoped to a specific theme (latest ship, what sits under it, surrounding repos / surfaces). Each follow-up paragraph may open with a bold inline lede (e.g., `**Latest, offline queue.**`) to give the reader a scanning anchor. Code names get backticks (`` `tr300` ``, `` `cargo install` ``, `` `magicpantry://` ``). Cross-repo references use markdown links to the actual GitHub URL. Bullets inside cards are still discouraged: use prose paragraphs with bold inline ledes instead.
 - **Tense:** present perfect for shipped work ("hardened the network-fix loop"), present continuous for active work ("currently in secondary route parity").
 
 ---
@@ -183,12 +184,16 @@ The blank line and `&nbsp;` after `<summary>` are required for the markdown insi
 > [!NOTE]
 > **MAY 2026, actively shipping**
 >
-> &middot; **PROJECT NAME**, one-line description of what is shipping
-> &middot; **PROJECT NAME**, one-line description of what is shipping
-> &middot; **PROJECT NAME**, one-line description of what is shipping
+> &middot; **PROJECT NAME, headline.** Two-to-three sentence summary of the headline ship.
+>
+> Optional second paragraph (under the same bullet, separated by a blank `>` line) for what sits under the headline, an in-flight follow-up, or a short bold sub-section like **`PR #2:`** or **`Underneath:`**.
+>
+> &middot; **PROJECT NAME, headline.** Same pattern.
+>
+> &middot; **PROJECT NAME, headline.** Same pattern.
 ```
 
-Three bullets max. Each bullet starts with `&middot; **Bold project name**, ` then the description. The month/year header is bold and uppercase. Update the month string when a new month begins.
+Three bullets max. Each bullet starts with `&middot; **Bold project name, headline.**` then a 2-3 sentence summary. A bullet may break into multiple paragraphs (separated by blank `>` lines) when there is a distinct "PR #1 / PR #2 / PR #3" or "headline / what sits under it" structure to chunk, but the total length per bullet should stay scannable: keep each paragraph short, and use bold inline ledes (`**Reporting tool:**`, `**PR #2:**`) to give the reader a scanning anchor. Never write a single 8-12 sentence run-on as a bullet. The month/year header is bold and uppercase; update the month string when a new month begins.
 
 ### 7. Project card (inside the 2x3 CURRENT WORK table)
 
@@ -217,10 +222,16 @@ To add a new project: insert a `<td>` cell into the table (mind the row structur
 
 &nbsp;
 
-One continuous paragraph listing all secondary projects, with markdown links to each, mid-dots and slashes between, ending with a period.
+**Theme A.** Short paragraph describing the secondary projects in this theme, with markdown links to each repo, ending with a period.
+
+**Theme B.** Short paragraph describing the next group.
+
+**Theme C.** Short paragraph describing the next group.
 
 </details>
 ```
+
+Group secondary projects by theme (e.g. **SHAUGHV brand system**, **Video + media**, **Web tools**, **Qube TX surfaces**, **Smaller surfaces**) and write one short paragraph per theme. Each theme opens with a bold inline lede. Avoid the old single-paragraph format, it produces an unreadable wall of comma-separated parentheticals.
 
 ### 9. Mermaid mindmap (STACK)
 
@@ -249,10 +260,12 @@ mindmap
 |        | **Feb** | Release 1, Release 2 |
 |        | **Mar** | Release 1 |
 | **Q2** | **Apr** | Release 1, Release 2 |
-|        | **May** | Release 1, Release 2, Release 3 |
+|        | **May** | **Project family A:** ship 1, ship 2, ship 3. <br><br> **Project family B:** ship 1, ship 2. <br><br> **Other:** ship 1, ship 2. |
 ```
 
-`Quarter` and `Month` are bold. `Shipped` is plain. Quarter only appears on the first month of that quarter (leave subsequent rows' Quarter cell blank). Items in `Shipped` are comma-separated.
+`Quarter` and `Month` are bold. `Shipped` is plain. Quarter only appears on the first month of that quarter (leave subsequent rows' Quarter cell blank).
+
+When a month's `Shipped` cell would otherwise become a wall of comma-separated text, group by project family with a bold inline lede (`**TR-300:**`, `**Magic Pantry:**`, `**SHAUGHV brand:**`, `**Other:**`) and use `<br><br>` between groups to insert visual breathing room. Items within a group stay comma-separated. The double `<br><br>` is intentional, GitHub renders them as a paragraph-break-like gap inside the table cell.
 
 ### 11. Badge rows (Languages / Frameworks / Cloud)
 
@@ -277,13 +290,17 @@ The slug must be a valid [simple-icons](https://simpleicons.org) identifier. Not
 
 &nbsp;
 
-- **Topic heading.** Detailed sentence-form description ending in a period.
-- **Topic heading.** Detailed sentence-form description ending in a period.
+- **Topic heading.** One-sentence summary that opens the bullet.
+  - **Sub-heading:** specific detail in sentence-form, ending with a period.
+  - **Sub-heading:** specific detail in sentence-form, ending with a period.
+  - **Sub-heading:** specific detail in sentence-form, ending with a period.
+- **Next topic.** One-sentence summary.
+  - **Sub-heading:** specific detail in sentence-form, ending with a period.
 ...
 </details>
 ```
 
-Each bullet starts with a bold heading followed by a period, then continues in sentence case. Periods end every bullet.
+Each bullet starts with a bold heading followed by a period and a single-sentence summary. When the bullet has multiple distinct sub-points (phases of a sprint, multiple PRs landing the same week, multiple components touched), break them out as nested sub-bullets rather than packing 8-12 sentences into one prose paragraph. Each sub-bullet opens with a bold inline lede (`**v0.3.0:**`, `**PR #1:**`, `**Scorecards dashboard:**`) so the reader can scan quickly. Periods end every bullet and sub-bullet. The whole `<details>` is collapsed by default; the reader opens it only when they want depth, so the goal here is scannable density, not minimum verbosity.
 
 ### 13. Dynamic stat shields (NUMBERS row)
 

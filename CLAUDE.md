@@ -151,27 +151,29 @@ Quick recipes for the operations refresh agents perform most often. For exact ma
 
 1. Locate the `## NOW` heading.
 2. Inside the `> [!NOTE]` block, update the `**MONTH YEAR, actively shipping**` header.
-3. Replace the three `&middot; **Project**, ...` bullets with the current week's shipping list.
+3. Replace the three `&middot; **Project, headline.**` bullets with the current week's shipping list.
 4. Keep exactly three bullets. If you have four candidates, pick the three highest-impact.
+5. **Cap each bullet at 2-3 short paragraphs.** Lead with `&middot; **Project name, one-line headline.**` followed by a 2-3 sentence summary. If the bullet has a natural multi-part structure (PR #1 / PR #2 / PR #3; headline / what sits under it; reporting tool / scorecards dashboard / stack), break it into multiple paragraphs inside the same bullet, separated by blank `>` lines, each opening with a bold inline lede (`**PR #2:**`, `**Underneath:**`, `**Stack:**`). Never write a single 8-12 sentence run-on bullet. The `NOW` block is the most-read section of the page; readability beats density.
 
 ### Updating a project card description
 
 1. Locate the `## CURRENT WORK` table.
 2. Find the `<td>` cell whose `### [Project](url)` heading matches the project.
-3. Replace the descriptive paragraph beneath the tech-pill row. Do not touch the heading, tagline, or tech pills unless those have legitimately changed.
-4. Keep the paragraph in continuous prose form (not bulleted). Use backticks for code names, markdown links for cross-repo references.
+3. Replace the descriptive paragraph(s) beneath the tech-pill row. Do not touch the heading, tagline, or tech pills unless those have legitimately changed.
+4. Use **multiple short paragraphs separated by blank lines**, not one wall of text. Lead with a 1-2 sentence "what it is" paragraph, then 2-3 follow-up paragraphs each scoped to a specific theme (latest ship, what sits under it, surrounding repos / surfaces). Each follow-up paragraph may open with a bold inline lede (`**Latest, offline queue.**`, `**Underneath, 2.0 / 2.0.1 store-ready prep.**`) so the reader can scan. Stay in prose form (no bullets inside cards). Use backticks for code names, markdown links for cross-repo references.
 
 ### Appending a month to the release timeline
 
 1. Locate `### 2026 release timeline` under `## STACK`.
 2. Append a new row to the table.
 3. If the month belongs to a new quarter, fill in `**Q3**` / `**Q4**` etc. and leave subsequent rows of the same quarter blank in that column.
-4. The `Month` cell is always bold. The `Shipped` cell is plain, comma-separated.
+4. The `Month` cell is always bold. The `Shipped` cell is plain.
+5. If the `Shipped` cell would otherwise become a wall of comma-separated text, group by project family with a bold inline lede (`**TR-300:**`, `**Magic Pantry:**`, `**SHAUGHV brand:**`, `**Other:**`) and use `<br><br>` between groups so the cell renders with paragraph-like breathing room.
 
 ### Adding a focus bullet to the deep-dive
 
 1. Open the `<details>` with summary "More on what I'm building right now, full breakdown" under `## STACK`.
-2. Add a bullet in the shape: `- **Topic heading.** Detailed description ending in a period.`
+2. Add a bullet in the shape: `- **Topic heading.** One-sentence summary.` followed by nested sub-bullets for specifics: `  - **Sub-heading:** specific detail ending in a period.` When a bullet has multiple distinct sub-points (phases of a sprint, multiple PRs landing the same week, multiple components touched), break them out as nested sub-bullets rather than packing 8-12 sentences into one prose paragraph. Each sub-bullet opens with a bold inline lede so the reader can scan.
 3. Insertion order is roughly by priority / recency.
 
 ### Adding a project to `CURRENT WORK`
