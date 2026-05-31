@@ -56,9 +56,9 @@ I build full-stack products, Rust diagnostics, and the systems that ship them. C
 > [!NOTE]
 > **MAY 2026, actively shipping**
 >
-> &middot; **Day-job, editorial PDF redesign + chat persona lock.** Late-May sprint lifting an internal monthly-reporting tool from functional to beta-ready: a typeset PDF cover (custom-typeface wordmark via CSS `mask-image` over an SVG + text fallback, photo-frame treatment, 4-photo cap, per-section page-break tuning), a paired editor header with an inline calendar SVG + a data-freshness pill, and a backend resilience pass on a flaky upstream image fetch (retry + exponential backoff against transient outages).
+> &middot; **Day-job, editorial PDF redesign + symmetric server / client fixes.** Late-May sprint on an internal monthly-reporting tool. The headline ship: a typeset PDF cover (custom-typeface wordmark via CSS `mask-image` over an SVG + text fallback, photo-frame treatment, 4-photo cap, per-section page-break tuning) paired with an editor header redesign (inline calendar SVG + data-freshness pill, replacing a stacked layout).
 >
-> **Underneath:** `Regenerate Report` from fresh data with a two-stage inline confirm, embedded-chat audience-role lock with an admin-verb regression guard, questionnaire answers wired into the LLM-synthesized narrative, and a cleared-photo-selection bug fixed symmetrically on the server-side PDF and the client draft preview.
+> **Latest, resilience + symmetry.** Backend retry + exponential backoff on a flaky upstream image fetch against transient outages, and a cleared-photo-selection bug fixed in symmetry on both the server-side PDF and the client draft preview. `Regenerate Report` from fresh data sits on a two-stage inline confirm; embedded-chat audience-role lock carries an admin-verb regression guard; PM questionnaire answers feed the LLM-synthesized narrative.
 >
 > **Stack:** Python + FastAPI, React 19 + TypeScript + Vite, hand-rolled CSS, Azure Container Apps + Static Web Apps with named-revision deploys per merge.
 >
