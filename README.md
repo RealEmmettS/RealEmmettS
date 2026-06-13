@@ -18,8 +18,8 @@
 </picture>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2400&pause=1200&color=F5E0C5&center=true&vCenter=true&width=640&lines=full-stack+developer+%C2%B7+rust+%2B+typescript;founder%2C+qube+tx+%C2%B7+diagnostics+%26+web+studio;building+magic+pantry%2C+dorsey+2026%2C+shaughv+os;shipping+reliable+systems+since+2017">
-  <img alt="full-stack developer · rust + typescript · founder, qube tx · building magic pantry, dorsey 2026, shaughv os · shipping reliable systems since 2017" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2400&pause=1200&color=204F20&center=true&vCenter=true&width=640&lines=full-stack+developer+%C2%B7+rust+%2B+typescript;founder%2C+qube+tx+%C2%B7+diagnostics+%26+web+studio;building+magic+pantry%2C+dorsey+2026%2C+shaughv+os;shipping+reliable+systems+since+2017">
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2400&pause=1200&color=F5E0C5&center=true&vCenter=true&width=640&lines=full-stack+developer+%C2%B7+rust+%2B+typescript;founder%2C+qube+tx+%C2%B7+diagnostics+%26+web+studio;building+magic+pantry%2C+wb-300%2C+shaughv+os;shipping+reliable+systems+since+2017">
+  <img alt="full-stack developer · rust + typescript · founder, qube tx · building magic pantry, wb-300, shaughv os · shipping reliable systems since 2017" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&duration=2400&pause=1200&color=204F20&center=true&vCenter=true&width=640&lines=full-stack+developer+%C2%B7+rust+%2B+typescript;founder%2C+qube+tx+%C2%B7+diagnostics+%26+web+studio;building+magic+pantry%2C+wb-300%2C+shaughv+os;shipping+reliable+systems+since+2017">
 </picture>
 
 <br>
@@ -31,7 +31,7 @@
 
 <br>
 
-I build full-stack products, Rust diagnostics, and the systems that ship them. Currently a workshop of Qube TX, Magic Pantry, Dorsey 2026, and the SHAUGHV brand system.
+I build full-stack products, Rust diagnostics, and the systems that ship them. Currently a workshop of Qube TX, the WB-300 workbranch orchestrator, Magic Pantry, and the SHAUGHV brand system.
 
 [![Website](https://img.shields.io/badge/WEBSITE-204F20?style=for-the-badge&logo=About.me&logoColor=F5E0C5)](https://emmettshaughnessy.com)
 [![Qube TX](https://img.shields.io/badge/QUBE_TX-F5E0C5?style=for-the-badge&labelColor=204F20&logoColor=204F20)](https://qubetx.com)
@@ -56,17 +56,17 @@ I build full-stack products, Rust diagnostics, and the systems that ship them. C
 > [!NOTE]
 > **JUNE 2026, actively shipping**
 >
-> &middot; **Day-job, internal data platform ingestion rebuild.** Re-architecting a nightly full-batch sync into a webhook-driven incremental tier: an always-warm receiver that validates an upstream shared-secret header and hands off to a message queue, a queue-scaled worker that dedups and idempotently upserts with `updated_at` precedence (at-least-once / out-of-order safe), and a metadata-driven per-category cadence so each entity is polled only as often as its freshness target needs.
+> &middot; **WB-300, the workbranch orchestrator.** A new Rust TUI ([`qube-workbranch-view`](https://github.com/QubeTX/qube-workbranch-view)) that renders the real git branch hierarchy (repo &rarr; trunk &rarr; workbranch &rarr; task) across every active repo at once, each row carrying its attached coding agent, lifecycle stage, worktree path, and the files it is editing right now.
 >
-> **Rolling out strangler-fig:** parallel-run against the existing nightly batch to prove per-entity parity before retiring it to a weekly reconcile, with App Insights observability + low-false-positive alerting on the new tier.
+> **Shipped `v2.0.0`,** the corrected branch-topology model: machine-wide tree, native OS toasts on commit / push / conflict-risk, a full `wb300 help` manual, a `wb300 uninstall` that unwinds all four Windows installers + cargo + bare binaries, and a `wb300.agent.v2` JSON contract.
 >
-> **Stack:** Python, Azure (Service Bus, Functions, Container Apps Jobs, Key Vault, App Insights), SQL on a medallion schema, all driven through the `az` CLI.
+> &middot; **QorkMe `v5.0.0`, QubeTX-register rebuild.** Every page rebuilt on the QubeTX structural design language: a recolored Matrix identity with a new live LED `MatrixClock`, `LoadSequence` entrance choreography, slot-roll status interactions, and a single-RPC admin console, with `react-hot-toast` and the legacy components deleted.
 >
-> &middot; **Day-job, monthly-reporting tool.** June's rate-limit hardening triplet shipped to prod: backend fail-fast on upstream 429s + honest "temporarily unavailable" UX, a lazy-loaded photo drawer + cached photo list to cut upstream volume, and a paginated-render fix so the PDF signature block never splits a page. A follow-on pass fixed invisible questionnaire + photo-selector form fields traced to a phantom CSS custom property, guarded now by a Vitest check that fails on any undefined token.
+> **Underneath:** a six-migration Supabase sync verified live, `robots.ts` + `sitemap.ts` routes fixing a catch-all redirect loop, and Lighthouse at 100 accessibility / 100 best-practices.
 >
-> **In flight on `wb-2026-06-01`:** full-screen globe-loader on the three slowest actions, multi-select bulk-generate from the home list, last-report / last-edited sort, and PDF editorial round 2 (cover band, gray section banners, KPI strip).
+> &middot; **Day-job + Magic Pantry.** The internal data-platform ingestion rebuild keeps rolling out strangler-fig: a webhook-driven incremental tier (always-warm receiver &rarr; Service Bus &rarr; queue-scaled worker with idempotent `updated_at`-precedence upserts) parallel-run against the nightly batch to prove per-entity parity. Stack: Python, Azure (Service Bus / Functions / Container Apps Jobs / Key Vault / App Insights), SQL on a medallion schema.
 >
-> &middot; **Magic Pantry, 2.0.x close-out.** Offline-queued store actions land on `magicPantry_2026`: a `useStoreSyncStatus` hook + `offline-queued-items` test wrap the store mutations, queue them on disconnect, and replay cleanly on reconnect, with sync state surfaced through theme tokens for offline / syncing / synced. Release path locked behind an EAS `production` environment + an `eas-cli env:list` / `npm run test:all` verification gate.
+> **Magic Pantry `2.0.1`:** offline-queue polish (optimistic-id alias retargeting so edits against not-yet-synced rows survive, reconnect resume-before-invalidate, a faster persister flush) plus a hardening pass: profiles-privacy lockdown, per-user + centralized AI rate limits, upstream timeouts, and URL validation across the edge functions.
 
 ---
 
@@ -99,9 +99,9 @@ Around the CLIs: [`qube-network-diagnostics`](https://github.com/QubeTX/qube-net
 
 Custom aliases, click analytics, and a clean redirect layer on a Next.js + Supabase stack.
 
-**May 2026 SHAUGHV vintage palette migration.** Recolored every light + dark design token (cream surfaces, sage as the single action color, olive body text, bamboo warm accent), added IBM Plex Mono in the `--font-mono` slot alongside Makira, swapped hardcoded terracotta tones to sage across `UrlShortener` / `MatrixDisplay` / `MatrixBackground` / `SecureAccessMatrix`, and stripped `AmbientDecor` plus the card 3D tilt. Internal card shimmer beam preserved.
+**June 2026 `v5.0.0`, QubeTX-register rebuild.** Every page rebuilt on the QubeTX structural design language: the Matrix identity recolored to the QorkMe sage &rarr; bamboo ramp (`MatrixDisplay` / `DotGrid` plus a new anime-driven live LED `MatrixClock`), `LoadSequence` entrance choreography, slot-roll status interactions on the shortener and result pages, a single-RPC admin console, and a `SysStatus` footer. `react-hot-toast` and the legacy Bauhaus / DOM-matrix components deleted.
 
-**Earlier this year:** Supabase RLS hardened end-to-end (INSERT policy on clicks, `SECURITY DEFINER` increment, owner-only writes, revoked TRUNCATE from anon / authenticated), URL redirect cache bounded with FIFO eviction, an O(N)-fix on AdminLinksTable maxClicks, and a refreshed admin dashboard.
+**Underneath:** a six-migration Supabase sync verified live (duplicate-URL dedup path, advisor warnings cleared, owner-only writes), `app/robots.ts` + `app/sitemap.ts` metadata routes that fix a `[shortCode]` catch-all redirect loop, Lighthouse at 100 accessibility / 100 best-practices, and CI moved to Node 20 / 22 for the Vitest 4 floor.
 
 </td>
 </tr>
@@ -122,16 +122,16 @@ The full ~400-tool IT + security toolset is scoped and queued behind the stabili
 </td>
 <td width="50%" valign="top">
 
-### [Dorsey 2026](https://github.com/QubeTX/dorsey_2026_BETA)
-**Music artist site**
+### [WB-300](https://github.com/QubeTX/qube-workbranch-view)
+**Workbranch orchestrator**
 
-`Next.js 16` `React 19` `Tailwind v4` `Framer Motion`
+`Rust` `TUI` `Git` `Agents`
 
-A full rebuild of a touring artist's site on Next.js 16 / React 19 / Tailwind v4, with shadcn/ui components and Framer Motion choreography.
+A terminal control tower for agent-driven development. It derives the true git branch hierarchy from commit topology (repo &rarr; trunk &rarr; workbranch &rarr; task) and renders it as one live tree, each branch carrying its attached coding agent, lifecycle stage, worktree path, and the files it is editing right now.
 
-Pivoted from a custom Jazz-Bauhaus reinterpretation to a faithful recreation of the live leonleedorsey.com visual language: header / footer reworked, home / about / music / store / videos / contact + several press / gear pages rebuilt, mobile nav swapped to a full-screen white sheet, and Squarespace media imported locally to avoid hotlinking.
+**Shipped `v2.0.0`,** the corrected branch-topology model. A machine-wide view unifies every active repo into one tree; native OS toasts fire on commit / push / conflict-risk; `wb300 help` prints the full manual; `wb300 uninstall` unwinds all four Windows installers + cargo + bare binaries; and the `wb300.agent.v2` JSON contract exposes the hierarchy to other tools.
 
-Site layout recreate + asset import landed early May; currently in a quiet polishing stretch before handoff.
+This is the tooling layer under the `<dev>/wb-<date>` workbranch workflow these projects ship through.
 
 </td>
 </tr>
@@ -145,13 +145,11 @@ Site layout recreate + asset import landed early May; currently in a quiet polis
 
 Full rebuild of the Magic Pantry app, lifted out of the prior Replit + Express + Drizzle + Modelfarm stack into `magicPantry_2026` on Supabase (Postgres + Auth + RLS + Realtime) with Expo SDK 55 / React Native 0.83 / React 19.2 / TanStack Query v5. AI features run through edge functions: Haiku 4.5 for item helpers, Sonnet 4.6 for generation / parsing, Firecrawl v2 for URL recipe import.
 
-**Latest, offline queue.** A 776-line `useStoreSyncStatus` hook + `offline-queued-items` test wraps `addStoreItem` / `updateStoreItem` / `removeStoreItem`, queues mutations when the network drops, and replays them cleanly on reconnect. Sync state pulled into `StoreDetailScreen` / `StoreListsScreen` / `ListItem` with theme tokens for offline / syncing / synced.
+**Latest, offline-queue polish (`2.0.1`).** The offline mutation queue now retargets optimistic ids to real server ids once a create lands, so queued edits / toggles / deletes against not-yet-synced rows survive instead of silently dropping. Reconnect flushes paused mutations before the reconciling refetch (no optimistic-row flicker), and the persister throttle drops 1000ms &rarr; 250ms to shrink the force-quit write-loss window. Wraps the earlier `useStoreSyncStatus` queue that replays cleanly on reconnect.
 
-**Underneath, 2.0 / 2.0.1 store-ready prep.** EAS project + account wired into `app.json` with `eas.json` pinned to a `production` environment carrying the public Supabase URL + publishable key, release verification gated behind `eas-cli env:list production --format short` + `npm run test:all`, Supabase magic-link sign-in via `magicpantry://` deep links, a Neon &rarr; Supabase migration runner with backups, a stability pass on the realtime sync hook + a 290-line `RecipesScreen` rewrite + `recipe-sharing` helpers, and an AI model policy in `AGENTS.md` locking item helpers to Haiku 4.5 and generation to Sonnet 4.6.
+**Hardening pass.** Profiles-privacy lockdown, per-user + centralized AI rate limits (60/min Haiku, 20/min Sonnet), upstream timeouts and URL validation across the edge functions, a signup precheck, and migration files renamed to timestamp versions to fix the branching Preview check.
 
-**Phases I-L.** Long-press + ActionSheet smart entry (`bulk-parse-items` / `generate-list`); debounced `PairingChips` row running `pair-suggestions` on keystroke; recipes table back with Library / Generate / Import + "What can I make?" pill running `recipes-from-list`; `find-substitute` returning "name -- note" with Replace / Add as new; `store_lists.sort_mode` (aisle grouped vs manual flat). Five new edge functions deployed; `tsc --noEmit` clean.
-
-**Phase H, still underneath.** Account self-service (forgot / reset / change password, change username, signup confirmation via `magicpantry://` deep links). Sharing tightened so non-owner projections drop emails entirely; RLS helpers in a `private` schema; `citext`-keyed username uniqueness.
+**Store-ready prep.** EAS wired into `app.json` with `eas.json` pinned to a `production` environment, release gated behind `eas-cli env:list` + `npm run test:all`, magic-link sign-in via `magicpantry://` deep links, and a Neon &rarr; Supabase migration runner. Phases I-L (smart entry, recipes library, substitutions, sort modes) shipped across five edge functions; `tsc --noEmit` clean.
 
 </td>
 <td width="50%" valign="top">
@@ -176,7 +174,7 @@ Vercel Analytics in production; recent passes covered design-system docs, an exp
 
 **SHAUGHV brand system.** [`shaughv-cdn`](https://github.com/RealEmmettS/shaughv-cdn) is the Cloudflare R2 brand-asset CDN at [`cdn.shaughv.com`](https://cdn.shaughv.com), hosting 91 versioned assets: the SHAUGHV wordmark + favicon variants + figurines, the full Makira Sans-Serif and IBM Plex Mono font families, plus vanilla and React / Framer Motion brandmark drop-ins. Per-object Content-Type + Cache-Control set at upload, paired CHANGELOG / HUMAN_CHANGELOG contract, and an `/install-cloudflare-mcp` project-level Claude Code skill.
 
-[`shaughv-code`](https://github.com/RealEmmettS/shaughv-code) is the SHAUGHV plugin marketplace at v0.8.0 after a six-release sprint: bundling `critical-thinking`, `openai-audio`, `pretext`, `perplexity-search`, `quiver-ai`, `shaughv-animated-brandmark`, `shaughv-design`, `/human-changelog`, `shaughv-cdn`, `naming-conventions`, and paired `gcs-storage` + `shaughv-gcs-storage`; two MCP server bundles (`@remotion/mcp` powering `/shaughv-code:create-video`, and `craft-docs` over Streamable HTTP + OAuth); plus a v0.8.0 dual-runtime split that ships a skills-only Codex plugin (`.codex-plugin/plugin.json` + `.agents/plugins/marketplace.json` + `AGENTS.md`) alongside the existing Claude Code surface so the same skill library installs on both runtimes.
+[`shaughv-code`](https://github.com/RealEmmettS/shaughv-code) is the SHAUGHV plugin marketplace at v0.11.0 after a sustained sprint: bundling `critical-thinking`, `openai-audio`, `pretext`, `perplexity-search`, `quiver-ai`, `shaughv-animated-brandmark`, `shaughv-design`, `/human-changelog`, `shaughv-cdn`, `naming-conventions`, and paired `gcs-storage` + `shaughv-gcs-storage`; two MCP server bundles (`@remotion/mcp` powering `/shaughv-code:create-video`, and `craft-docs` over Streamable HTTP + OAuth); plus a v0.8.0 dual-runtime split that ships a skills-only Codex plugin (`.codex-plugin/plugin.json` + `.agents/plugins/marketplace.json` + `AGENTS.md`) alongside the existing Claude Code surface so the same skill library installs on both runtimes. A v0.9.0 &rarr; v0.11.0 run then added 11 imported skills, decoupled them from the work stack, and shipped a `wb300` branch control-tower skill for driving the orchestrator from inside the agent.
 
 [`shaughv_vintage`](https://github.com/RealEmmettS/shaughv_vintage) is the vintage-leaning personal portfolio refreshed onto the SHAUGHV vintage design system with Pretext-driven auto-fit headings, an `IntersectionObserver` scrollspy, and a project-level Claude Code automation pack (paired-changelog hook, Pretext `TEXT_REGISTRY` hook, `/changelog-pair` skill, motion-accessibility + design-system-guardian reviewer agents, MCP wiring for context7 + chrome-devtools).
 
@@ -187,6 +185,8 @@ Vercel Analytics in production; recent passes covered design-system docs, an exp
 [`realtime2_test`](https://github.com/RealEmmettS/realtime2_test) is an OpenAI Realtime API voice-agent prototype on a hybrid Vercel-functions + Express architecture: a `Cypher` persona auto-greet, paired mic / audio-output device selectors, an AudioContext-driven silence-detection diagnostic, and a per-route handler model that lets the same pure functions back both Express and Vercel deployments.
 
 **Qube TX surfaces.** [`QubeTX_Landing`](https://github.com/QubeTX/QubeTX_Landing), [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage), [`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables) (offline installers), the multi-provider [SpeedQX](https://github.com/QubeTX/speedtest) web app and its parallel Expo / React Native port carrying the v2.0 technician-grade accuracy overhaul (bootstrap CIs, inverse-variance weighting, RFC 3550 jitter, byte-weighted progress).
+
+**Client + artist sites.** [Dorsey 2026](https://github.com/QubeTX/dorsey_2026_BETA) is a touring musician's site rebuilt on Next.js 16 / React 19 / Tailwind v4 with shadcn/ui + Framer Motion, recreating the live leonleedorsey.com visual language. The layout recreate + Squarespace asset import landed early May; now in a quiet polishing stretch before handoff.
 
 **Smaller surfaces.** A print-tuned [`resume-2026`](https://resume.emmetts.dev) on Makira / Personal-Vogue that auto-deploys via GitHub Pages, [Time](https://github.com/RealEmmettS/time) (atomic-clock alternative to time.gov with a Marzullo-uncertainty-based watch score), Remotion-based programmatic video experiments, MDX docs sites, and a rotating cast of small utilities (timer, csv tools, countdown apps, movie list).
 
@@ -229,7 +229,7 @@ mindmap
 |        | **Mar** | shaughvOS v1.18, CLI-first boot |
 | **Q2** | **Apr** | Magic Pantry Phase G, auth flows |
 |        | **May** | **TR-300:** v3.14.x preflight chain, v3.15.0 / v3.15.1 four-installer Windows distribution, v3.15.2 cross-platform Opus 4.7 audit + SHA256 installer verification, v3.15.3 audit close (F17 / F20 / F22), May-27 security hardening triplet (updater + fast-mode GPU helpers + markdown auto-save). <br><br> **Magic Pantry:** Phase H + Phases I-L (smart entry, recipes library, substitutions, sort modes, 5 new edge functions), 2.0 / 2.0.1 store-ready prep (EAS production env requirement + release-verification checklist, magic-link sign-in, Neon &rarr; Supabase migration runner, AI model policy), offline queued store actions. <br><br> **SHAUGHV brand:** `shaughv-cdn` launch (91 assets to Cloudflare R2), `shaughv-code` v0.2.0 &rarr; v0.8.0 marketplace sprint capped by a dual-runtime Codex plugin surface, `italy-trip-video` Remotion 50th-birthday slideshow, `shaughv_vintage` refresh + project-level Claude Code automation. <br><br> **Web tools:** `qrgen` SHAUGHV product surface rebuild with time-of-day dual palette + QR outline tracer, `realtime2_test` OpenAI Realtime API prototype, QorkMe SHAUGHV vintage palette migration. <br><br> **Other:** shaughvOS v1.20, day-job sprint across internal monthly-reporting tool + scorecards dashboard + team tooling (Regenerate Report flow with versioned snapshots + undo + history + two-stage inline confirm, editorial PDF redesign with SVG-mask wordmark + photo-frame treatment + 4-photo cap + retry/backoff upstream image fetch, embedded-chat audience-role lock with admin-verb regression guard, 6-chart Visual Snapshot data-viz layer, internal task-queue MCP `update_task` multi-operator edit, internal Claude Code plugin distributing the team skill library, `mission-control-mcp` umbrella skill). |
-|        | **Jun** | **Data platform:** ingestion-optimization milestone underway, webhook-driven incremental tier (always-warm receiver + Service Bus + queue-scaled worker with idempotent `updated_at`-precedence upserts) replacing the nightly full batch, metadata-driven per-category polling cadence, App Insights observability + low-false-positive alerting, plus a per-project photo-links table and a multi-tenant cardinality + deploy-safety hardening pass. <br><br> **Reporting tool (shipped):** rate-limit hardening triplet (backend fail-fast on upstream 429s + honest "temporarily unavailable" UX, lazy-loaded photo drawer + cached photo list, page-break fix on the PDF signature block), invisible-form-field fix (phantom CSS token) + a Vitest undefined-token guard. <br><br> **In flight on `wb-2026-06-01`:** full-screen globe-loader on the three slowest actions, multi-select bulk-generate, last-report / last-edited sort, PDF editorial round 2 (cover band + gray section banners + KPI strip). |
+|        | **Jun** | **Data platform:** ingestion-optimization milestone underway, webhook-driven incremental tier (always-warm receiver + Service Bus + queue-scaled worker with idempotent `updated_at`-precedence upserts) replacing the nightly full batch, metadata-driven per-category polling cadence, App Insights observability + low-false-positive alerting, plus a per-project photo-links table and a multi-tenant cardinality + deploy-safety hardening pass. <br><br> **Reporting tool (shipped):** rate-limit hardening triplet (backend fail-fast on upstream 429s + honest "temporarily unavailable" UX, lazy-loaded photo drawer + cached photo list, page-break fix on the PDF signature block), invisible-form-field fix (phantom CSS token) + a Vitest undefined-token guard. <br><br> **In flight on `wb-2026-06-01`:** full-screen globe-loader on the three slowest actions, multi-select bulk-generate, last-report / last-edited sort, PDF editorial round 2 (cover band + gray section banners + KPI strip). <br><br> **WB-300:** new Rust TUI workbranch orchestrator shipped to `v2.0.0` (real branch-hierarchy tree across every repo, attached-agent + lifecycle view, OS toast notifications, `wb300 help` / `uninstall`, `wb300.agent.v2` JSON). <br><br> **QorkMe:** `v5.0.0` QubeTX-register rebuild (Matrix identity + live LED clock, single-RPC admin, six-migration DB sync, Lighthouse 100 a11y). <br><br> **Magic Pantry:** `2.0.1` offline-queue polish (optimistic-id alias retargeting, reconnect sequencing) + privacy / AI-rate-limit hardening. <br><br> **shaughv-code:** `v0.9.0` &rarr; `v0.11.0` (11 imported skills, work-stack decoupling, `wb300` branch control-tower skill). |
 
 <br>
 
@@ -264,6 +264,12 @@ mindmap
 
 &nbsp;
 
+- **WB-300, the workbranch orchestrator.** New Rust TUI in [`qube-workbranch-view`](https://github.com/QubeTX/qube-workbranch-view), built and shipped to `v2.0.0` in days.
+  - **Branch-first tree:** derives the real hierarchy (repo &rarr; trunk &rarr; workbranch &rarr; task) from commit topology, using the `wb-<date>` convention only to break equal-tip ties; each row shows its lifecycle stage (uncommitted / committed / pushed / merged / fresh + a live "editing" refinement), ahead/behind, attached agent, worktree, and the files it is changing.
+  - **Machine-wide view:** one unified tree across every active repo, per-repo staleness chips, drill-in for mutations.
+  - **Notifications:** native OS toasts on commit / push / conflict-risk only, with 1.5s coalescing + per-branch cooldowns; Windows self-registers an AUMID, Linux uses pure-Rust zbus.
+  - **CLI + contract:** `wb300 help` prints the full manual; `wb300 uninstall` unwinds all four Windows installers + cargo + bare binaries; the `wb300.agent.v2` JSON exposes the hierarchy to other tools.
+
 - **shaughv-cdn.** Cloudflare R2 brand-asset CDN at [`cdn.shaughv.com`](https://cdn.shaughv.com), 91 versioned assets in one push.
   - **Brand assets:** SHAUGHV wordmark (SVG + Green / Orange PNG), 4 favicon variants, 2 figurine SVGs + 10 webp variants.
   - **Fonts:** full Makira Sans-Serif family (6 weights &times; OTF / TTF / WOFF / WOFF2 + variable axis) and full IBM Plex Mono (7 weights &times; normal + italic).
@@ -277,6 +283,7 @@ mindmap
   - **v0.6.0:** paired `gcs-storage` + `shaughv-gcs-storage` skills, the latter pre-wired to `gs://shaughv` with bucket facts baked in (uniform IAM, public reads, 7-day soft delete, versioning on).
   - **v0.7.0:** `craft-docs` MCP server bundle over Streamable HTTP + OAuth so the agent can read / write a Craft Doc directly.
   - **v0.8.0:** dual-runtime plugin surface; paired skills-only `.codex-plugin/plugin.json` + `.agents/plugins/marketplace.json` entry + `AGENTS.md` covering Codex install / update flows, alongside the unchanged Claude Code marketplace carrying the full skills + MCPs + commands set.
+  - **v0.9.0 &rarr; v0.11.0:** 11 imported skills added, then decoupled from the work stack, plus a `wb300` branch control-tower skill for driving the orchestrator from inside the agent.
 
 - **italy-trip-video.** Remotion 50th-birthday Italy trip slideshow: 1920&times;1080 @ 30fps, 270.96s runtime, 92 chronological images, `divineSong.mp3` audio.
   - `SubtitleOverlay` component loads Makira and renders timed `lyricCaptions`; both `ItalyTripSlideshow` and `ItalyTripSlideshowSubtitled` compositions registered.
@@ -287,6 +294,8 @@ mindmap
   - Wraps `addStoreItem` / `updateStoreItem` / `removeStoreItem` in a new `useStoreSyncStatus` hook + `offline-queued-items` test surface.
   - App-level wiring through `query-client.ts`, `api.ts`, `AuthContext.tsx`; sync state surfaced in `StoreDetailScreen`, `StoreListsScreen`, `ListItem`; theme tokens extended for offline / syncing / synced.
   - Net effect: keep adding to a list on the subway with no signal; the queue drains against the live Supabase store on reconnect.
+  - **2.0.1 polish:** an optimistic-id alias map so queued edits / toggles / deletes against not-yet-synced rows retarget the real server id once their create lands (no more silently dropped edits); reconnect flushes paused mutations before the reconciling refetch; persister throttle 1000ms &rarr; 250ms.
+  - **Hardening pass:** profiles-privacy lockdown, per-user + centralized AI rate limits (60/min Haiku, 20/min Sonnet), upstream timeouts + URL validation across edge functions, signup precheck, migration files renamed to timestamp versions to fix the branching Preview check.
 
 - **Magic Pantry 2.0 / 2.0.1 store-ready prep.** App Store submission window.
   - **EAS wired** into `app.json` (`extra.eas.projectId` + `owner = "realemmetts"`) so cloud builds + store submissions can run; `eas.json` pinned to a `production` environment carrying `EXPO_PUBLIC_SUPABASE_URL` + `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, with release verification gated behind `eas-cli env:list production --format short` + `npm run test:all`.
@@ -310,7 +319,10 @@ mindmap
   - **Boot loader:** boundary-walking QR outline tracer in `src/lib/qr-outline.ts` (rebuilds the matrix via `qrcode-generator`, emits boundary edges, stitches via perimeter walking) powering a 6-phase boot loop.
   - **AI generation:** Gemini 3.1 flash image preview with `responseModalities: ["TEXT", "IMAGE"]` + a ThinkingLevel-high prompt enhancer.
 
-- **QorkMe SHAUGHV vintage palette migration.** Recolored every design token (cream / sage / olive / bamboo), added IBM Plex Mono in the `--font-mono` slot, swapped hardcoded terracotta to sage across `UrlShortener` / `MatrixDisplay` / `MatrixBackground` / `SecureAccessMatrix`, deleted `AmbientDecor` + the card 3D tilt wrapper. Internal card shimmer beam preserved.
+- **QorkMe `v5.0.0`, QubeTX-register rebuild.** Every page rebuilt on the QubeTX structural design language.
+  - **Identity:** Matrix components recolored to the QorkMe sage &rarr; bamboo ramp, `dotFont` extended with digits + colon, a new anime-driven live LED `MatrixClock`; home gains `LoadSequence` entrance choreography, slot-roll status interactions, and a sage dot-field pulse on link creation.
+  - **Surfaces:** single-RPC admin console (`admin_health_stats` count-ups), `SysStatus` footer, void-on-white QR result page; `react-hot-toast` and the legacy Bauhaus / DOM-matrix components deleted.
+  - **Under it:** six-migration Supabase sync verified live (dedup path, advisors clear), `robots.ts` + `sitemap.ts` routes fixing a `[shortCode]` catch-all redirect loop, Lighthouse 100 a11y / 100 best-practices, CI on Node 20 / 22 for Vitest 4.
 
 - **TR-300 May-27 security hardening triplet.** Three Codex-authored open PRs on [`qube-machine-report`](https://github.com/QubeTX/qube-machine-report).
   - **PR #1, Windows updater temp-file handling:** new `unique_update_temp_path()` (VERSION + nanos timestamp + PID + sequence); `download_to_file` swaps `File::create` for `OpenOptions::create_new(true)` so a pre-planted `%TEMP%` symlink can't redirect or truncate the download.
