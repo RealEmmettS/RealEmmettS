@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JUNE 2026, selected proof**
 >
-> &middot; **shaughv-code `v0.25.0`.** The personal Codex skill bundle now carries the SHAUGHV design system, audio, Mistral, security, workflow, image, storage, branch-control, and summary skills as one installable plugin. It is the portable tooling layer behind how I design, review, ship, and hand off work. [Repository](https://github.com/RealEmmettS/shaughv-code).
+> &middot; **Multi-agent delivery loop.** My day-to-day engineering now runs as a real multi-agent loop: a coding agent executes scoped tasks from an MCP-backed task queue while Claude Code hooks handle heartbeat, check-in, checkout, and stalled-task detection. shaughv-code and WB-300 are the public tooling layer behind it. [shaughv-code](https://github.com/RealEmmettS/shaughv-code).
+>
+> &middot; **Data platform reliability.** Hardened a production data-sync platform: webhook-driven freshness signals that replace poll-recency false-alerts, pre-MERGE source de-duplication to stop "matched multiple source rows" failures, financial ledger parity views with duplicate-key triage, and a restored weekly delete-reconciliation cadence. Python sync workers on Azure Functions and Container Apps Jobs over SQL Server. [Project notes](#workshop-archive).
 >
 > &middot; **WB-300 `v2.0.0`.** The workbranch control tower models real git topology as repo / trunk / workbranch / task, then shows active branches, agents, lifecycle stage, worktree paths, and edited files in one terminal view. It turns multi-agent development from scattered tabs into an inspectable system. [Repository](https://github.com/QubeTX/qube-workbranch-view).
->
-> &middot; **Magic Pantry `2.0.2`.** The pantry app moved to offline-first list durability and live collaborative merge: server-set timestamps, idempotency keys, realtime echo dedup, delete-evict, newer-wins, and field-preserving edits. The result is a grocery list that keeps working under bad signal and shared use. [Project notes](#workshop-archive).
 
 ---
 
@@ -180,11 +180,11 @@ Admin analytics
 </tr>
 <tr>
 <td align="center"><strong>004</strong><br><sub>AI WORKFLOWS</sub></td>
-<td><code>Codex skills</code> &middot; <code>edge functions</code> &middot; <code>review loops</code></td>
+<td><code>agent orchestration</code> &middot; <code>MCP task queues</code> &middot; <code>review loops</code></td>
 </tr>
 <tr>
 <td align="center"><strong>005</strong><br><sub>CLOUD DATA</sub></td>
-<td><code>Supabase</code> &middot; <code>Azure queues</code> &middot; <code>observability</code></td>
+<td><code>SQL Server pipelines</code> &middot; <code>Azure queues</code> &middot; <code>freshness + observability</code></td>
 </tr>
 </table>
 
@@ -193,6 +193,7 @@ Admin analytics
 ![Rust](https://img.shields.io/badge/Rust-204F20?logo=rust&logoColor=F5E0C5)
 ![TypeScript](https://img.shields.io/badge/TypeScript-204F20?logo=typescript&logoColor=F5E0C5)
 ![Python](https://img.shields.io/badge/Python-204F20?logo=python&logoColor=F5E0C5)
+![FastAPI](https://img.shields.io/badge/FastAPI-204F20?logo=fastapi&logoColor=F5E0C5)
 ![Next.js](https://img.shields.io/badge/Next.js-204F20?logo=nextdotjs&logoColor=F5E0C5)
 ![React Native](https://img.shields.io/badge/React_Native-204F20?logo=react&logoColor=F5E0C5)
 ![Supabase](https://img.shields.io/badge/Supabase-204F20?logo=supabase&logoColor=F5E0C5)
@@ -283,9 +284,10 @@ Admin analytics
 
 &nbsp;
 
-- **Data ingestion platform.** Webhook-driven incremental tier with Service Bus, queue-scaled workers, idempotent `updated_at` precedence, parity checks against nightly batch, App Insights observability, and metadata-driven polling cadence.
-- **Monthly reporting tool.** Regenerate flows, versioned narrative snapshots, undo/history, editorial PDF work, photo handling, upstream retry/backoff, form-field validation, and client-safe messaging around rate limits.
-- **Scorecards and task queues.** Visual Snapshot charts, scoped office filters, project-detail layout work, operator-aware task updates, reorder race fixes, and internal tool distribution through a team plugin.
+- **Data platform reliability.** Webhook-driven freshness signals over poll-recency to end false-stale alerts, pre-MERGE source de-duplication to stop "matched multiple source rows" failures, financial ledger parity views with duplicate-key triage, orphaned high-volume poller recovery, and a restored weekly delete-reconciliation cadence. Python sync workers on Azure Functions and Container Apps Jobs over SQL Server, with Service Bus queues and App Insights observability.
+- **Reporting and pipeline tooling.** A reporting backend with regenerate flows, tightened date-input validation, audit events that make silent failures observable, and CSS-token guard tests; plus pipeline-monitor UI work for external-API rate-limit backoff and consistent server-side query timeouts. Python / FastAPI and React / TypeScript on Azure Container Apps and Static Web Apps.
+- **Multi-agent orchestration layer.** An internal MCP task queue coordinating human and coding-agent work: operator priority lists exposed through MCP read tools, Claude Code hooks for heartbeat / check-in / checkout and liveness, stalled-task detection, a dashboard answer-bridge, and same-origin CSRF guards on the write routes.
+- **Scorecards and operator surfaces.** Snapshot charts, scoped office filters, triage views with hide-done defaults, operator-aware task updates, and internal tool distribution through a team plugin.
 
 </details>
 
