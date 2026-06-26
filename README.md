@@ -18,10 +18,10 @@ I build operational software that survives real installers, real users, and real
 
 <table>
 <tr>
-<td align="center" width="25%"><strong>CRATES + INSTALLERS</strong><br><sub>Rust CLIs and packages<br>Install and update paths</sub></td>
-<td align="center" width="25%"><strong>AGENT WORKFLOWS</strong><br><sub>Codex plugins and skills<br>Branch control systems</sub></td>
-<td align="center" width="25%"><strong>PRODUCT SYSTEMS</strong><br><sub>Mobile, web, and auth<br>Realtime AI helpers</sub></td>
-<td align="center" width="25%"><strong>CLIENT DELIVERY</strong><br><sub>Qube TX studio work<br>Data platform delivery</sub></td>
+<td align="center" width="25%"><strong>CRATES<br>INSTALLERS</strong><br><sub>Rust CLIs<br>Native updates</sub></td>
+<td align="center" width="25%"><strong>AGENT<br>WORKFLOWS</strong><br><sub>Codex skills<br>Branch control</sub></td>
+<td align="center" width="25%"><strong>PRODUCT<br>SYSTEMS</strong><br><sub>Mobile + web<br>Auth + realtime</sub></td>
+<td align="center" width="25%"><strong>CLIENT<br>DELIVERY</strong><br><sub>Qube TX work<br>Data platforms</sub></td>
 </tr>
 </table>
 
