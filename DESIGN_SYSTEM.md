@@ -107,7 +107,7 @@ Do not add an eighth top-level section without removing or merging another one. 
 
 - The Mermaid flowchart is an operating map, not a resume keyword dump.
 - Current lanes: `SYSTEMS`, `WEB`, `MOBILE`, `AI_WORKFLOWS`, `CLOUD_DATA`.
-- Keep the map indexed and rectilinear: one root, five lanes, one shipped-output node.
+- Keep the map indexed, rectilinear, and vertically stacked: one root, five lanes, one shipped-output node.
 - Keep badges focused to the working set. Do not add every tool Emmett has ever touched.
 
 ### Numbers

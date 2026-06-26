@@ -166,21 +166,16 @@ Admin analytics
 ## STACK
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#F5E0C5", "primaryColor": "#F5E0C5", "primaryTextColor": "#204F20", "primaryBorderColor": "#204F20", "lineColor": "#204F20", "secondaryColor": "#F5E0C5", "tertiaryColor": "#F5E0C5", "edgeLabelBackground": "#F5E0C5", "clusterBkg": "#F5E0C5", "clusterBorder": "#204F20", "fontFamily": "ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace"}}}%%
+%%{init: {"theme": "base", "flowchart": {"curve": "linear"}, "themeVariables": {"background": "#F5E0C5", "primaryColor": "#F5E0C5", "primaryTextColor": "#204F20", "primaryBorderColor": "#204F20", "lineColor": "#204F20", "secondaryColor": "#F5E0C5", "tertiaryColor": "#F5E0C5", "edgeLabelBackground": "#F5E0C5", "clusterBkg": "#F5E0C5", "clusterBorder": "#204F20", "fontFamily": "ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace"}}}%%
 flowchart TB
   ROOT["STACK<br/>OPERATING MAP"]
 
   ROOT --> S["001 / SYSTEMS<br/>Rust CLIs<br/>native installers<br/>update paths"]
-  ROOT --> W["002 / WEB<br/>Next.js products<br/>studio surfaces<br/>admin consoles"]
-  ROOT --> M["003 / MOBILE<br/>Expo apps<br/>realtime lists<br/>store-ready auth"]
-  ROOT --> A["004 / AI WORKFLOWS<br/>Codex skills<br/>edge functions<br/>review loops"]
-  ROOT --> C["005 / CLOUD DATA<br/>Supabase<br/>Azure queues<br/>observability"]
-
-  S --> O["SHIPPED SURFACES"]
-  W --> O
-  M --> O
-  A --> O
-  C --> O
+  S --> W["002 / WEB<br/>Next.js products<br/>studio surfaces<br/>admin consoles"]
+  W --> M["003 / MOBILE<br/>Expo apps<br/>realtime lists<br/>store-ready auth"]
+  M --> A["004 / AI WORKFLOWS<br/>Codex skills<br/>edge functions<br/>review loops"]
+  A --> C["005 / CLOUD DATA<br/>Supabase<br/>Azure queues<br/>observability"]
+  C --> O["SHIPPED<br/>SURFACES"]
 
   classDef root fill:#204F20,stroke:#204F20,color:#F5E0C5;
   classDef lane fill:#F5E0C5,stroke:#204F20,color:#204F20;
