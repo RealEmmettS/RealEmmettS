@@ -9,8 +9,8 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=F5E0C5&height=190&section=header&text=EMMETT%20SHAUGHNESSY&fontColor=204F20&fontSize=52&fontAlignY=38&desc=DIGITAL%20CRAFTSMAN&descSize=16&descAlignY=58&descAlign=50">
-  <img alt="Emmett Shaughnessy, Digital Craftsman" src="https://capsule-render.vercel.app/api?type=waving&color=204F20&height=190&section=header&text=EMMETT%20SHAUGHNESSY&fontColor=F5E0C5&fontSize=52&fontAlignY=38&desc=DIGITAL%20CRAFTSMAN&descSize=16&descAlignY=58&descAlign=50">
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=F5E0C5&height=190&section=header&text=EMMETT%20SHAUGHNESSY&fontColor=204F20&fontSize=64&fontAlignY=38&desc=DIGITAL%20CRAFTSMAN&descSize=18&descAlignY=60&descAlign=50">
+  <img alt="Emmett Shaughnessy, Digital Craftsman" src="https://capsule-render.vercel.app/api?type=waving&color=204F20&height=190&section=header&text=EMMETT%20SHAUGHNESSY&fontColor=F5E0C5&fontSize=64&fontAlignY=38&desc=DIGITAL%20CRAFTSMAN&descSize=18&descAlignY=60&descAlign=50">
 </picture>
 
 <br>
