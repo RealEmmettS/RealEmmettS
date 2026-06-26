@@ -16,12 +16,12 @@
 
 I build operational software that survives real installers, real users, and real release loops. Current focus: Qube TX, WB-300, Magic Pantry, shaughv-code, and QorkMe.
 
-<table>
+<table width="100%">
 <tr>
-<td align="center" width="25%"><strong>CRATES<br>INSTALLERS</strong><br><sub>Rust CLIs<br>Native updates</sub></td>
-<td align="center" width="25%"><strong>AGENT<br>WORKFLOWS</strong><br><sub>Codex skills<br>Branch control</sub></td>
-<td align="center" width="25%"><strong>PRODUCT<br>SYSTEMS</strong><br><sub>Mobile + web<br>Auth + realtime</sub></td>
-<td align="center" width="25%"><strong>CLIENT<br>DELIVERY</strong><br><sub>Qube TX work<br>Data platforms</sub></td>
+<td align="center" width="25%"><strong>CRATES<br>INSTALLERS</strong><br><sub>Rust CLIs<br>Installers</sub></td>
+<td align="center" width="25%"><strong>AGENT<br>WORKFLOWS</strong><br><sub>Codex skills<br>Git control</sub></td>
+<td align="center" width="25%"><strong>PRODUCT<br>SYSTEMS</strong><br><sub>Mobile web<br>Realtime AI</sub></td>
+<td align="center" width="25%"><strong>CLIENT<br>DELIVERY</strong><br><sub>Qube TX<br>Data work</sub></td>
 </tr>
 </table>
 
