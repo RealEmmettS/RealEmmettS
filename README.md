@@ -166,29 +166,28 @@ Admin analytics
 ## STACK
 
 ```mermaid
-%%{init: {'theme':'forest'}}%%
-mindmap
-  root((WHAT<br/>I BUILD))
-    SYSTEMS
-      Rust CLIs
-      Native installers
-      Update paths
-    WEB
-      Next.js products
-      Studio surfaces
-      Admin consoles
-    MOBILE
-      Expo apps
-      Realtime lists
-      Store-ready auth
-    AI_WORKFLOWS
-      Codex skills
-      Edge functions
-      Review loops
-    CLOUD_DATA
-      Supabase
-      Azure queues
-      Observability
+%%{init: {"theme": "base", "themeVariables": {"background": "#F5E0C5", "primaryColor": "#F5E0C5", "primaryTextColor": "#204F20", "primaryBorderColor": "#204F20", "lineColor": "#204F20", "secondaryColor": "#F5E0C5", "tertiaryColor": "#F5E0C5", "edgeLabelBackground": "#F5E0C5", "clusterBkg": "#F5E0C5", "clusterBorder": "#204F20", "fontFamily": "ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace"}}}%%
+flowchart TB
+  ROOT["STACK<br/>OPERATING MAP"]
+
+  ROOT --> S["001 / SYSTEMS<br/>Rust CLIs<br/>native installers<br/>update paths"]
+  ROOT --> W["002 / WEB<br/>Next.js products<br/>studio surfaces<br/>admin consoles"]
+  ROOT --> M["003 / MOBILE<br/>Expo apps<br/>realtime lists<br/>store-ready auth"]
+  ROOT --> A["004 / AI WORKFLOWS<br/>Codex skills<br/>edge functions<br/>review loops"]
+  ROOT --> C["005 / CLOUD DATA<br/>Supabase<br/>Azure queues<br/>observability"]
+
+  S --> O["SHIPPED SURFACES"]
+  W --> O
+  M --> O
+  A --> O
+  C --> O
+
+  classDef root fill:#204F20,stroke:#204F20,color:#F5E0C5;
+  classDef lane fill:#F5E0C5,stroke:#204F20,color:#204F20;
+  classDef output fill:#204F20,stroke:#204F20,color:#F5E0C5;
+  class ROOT root;
+  class S,W,M,A,C lane;
+  class O output;
 ```
 
 <br>
@@ -312,7 +311,7 @@ This profile is a GitHub-safe SHAUGHV translation: type-forward, proof-first, cr
 | GFM alert (`> [!NOTE]`) | `LATEST SHIPS` |
 | `<details>` / `<summary>` | TOC, archive sections, colophon |
 | HTML tables | Hero proof strip, selected systems, paired stats cards |
-| Mermaid `mindmap` | `STACK` operating map |
+| Mermaid `flowchart` | `STACK` operating map |
 | Live shields | Contact pills, profile metrics, stack badges |
 | Theme-aware widget cards | Streak, top languages, activity graph |
 | Heading auto-anchors | TOC links |

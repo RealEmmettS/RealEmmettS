@@ -64,7 +64,7 @@ The README has seven movements in this order:
 1. HERO              Static identity lockup, positioning line, proof strip, contact pills
 2. LATEST SHIPS      GFM note with exactly 3 compact proof entries
 3. SELECTED SYSTEMS  Indexed selected-work table with 5 systems
-4. STACK             Mermaid operating map + focused badge set
+4. STACK             Mermaid flowchart operating map + focused badge set
 5. NUMBERS           Live profile metrics and activity widgets
 6. WORKSHOP ARCHIVE  Collapsed long-form depth
 7. COLOPHON          Renderer catalogue + footer banner
@@ -105,8 +105,9 @@ Do not add an eighth top-level section without removing or merging another one. 
 
 ### Stack
 
-- The Mermaid map is an operating map, not a resume keyword dump.
-- Current branches: `SYSTEMS`, `WEB`, `MOBILE`, `AI_WORKFLOWS`, `CLOUD_DATA`.
+- The Mermaid flowchart is an operating map, not a resume keyword dump.
+- Current lanes: `SYSTEMS`, `WEB`, `MOBILE`, `AI_WORKFLOWS`, `CLOUD_DATA`.
+- Keep the map indexed and rectilinear: one root, five lanes, one shipped-output node.
 - Keep badges focused to the working set. Do not add every tool Emmett has ever touched.
 
 ### Numbers
