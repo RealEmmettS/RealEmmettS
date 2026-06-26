@@ -2,7 +2,7 @@
 <!--  EMMETT SHAUGHNESSY - GITHUB PROFILE                                   -->
 <!--                                                                        -->
 <!--  GitHub-safe SHAUGHV surface. No JavaScript, no CSS, no inline SVG,    -->
-<!--  no GitHub Actions. Built from GFM, sanitizer-safe HTML, Mermaid,      -->
+<!--  no GitHub Actions. Built from GFM, sanitizer-safe HTML, live badges,  -->
 <!--  shields, and theme-aware image URLs.                                  -->
 <!-- ====================================================================== -->
 
@@ -165,27 +165,28 @@ Admin analytics
 
 ## STACK
 
-```mermaid
-%%{init: {"theme": "base", "flowchart": {"curve": "linear"}, "themeVariables": {"background": "#F5E0C5", "primaryColor": "#F5E0C5", "primaryTextColor": "#204F20", "primaryBorderColor": "#204F20", "lineColor": "#204F20", "secondaryColor": "#F5E0C5", "tertiaryColor": "#F5E0C5", "edgeLabelBackground": "#F5E0C5", "clusterBkg": "#F5E0C5", "clusterBorder": "#204F20", "fontFamily": "ui-monospace, SFMono-Regular, SF Mono, Consolas, Liberation Mono, Menlo, monospace"}}}%%
-flowchart TB
-  ROOT["STACK<br/>OPERATING MAP"]
-
-  ROOT --> S["001 / SYSTEMS<br/>Rust CLIs<br/>native installers<br/>update paths"]
-  S --> W["002 / WEB<br/>Next.js products<br/>studio surfaces<br/>admin consoles"]
-  W --> M["003 / MOBILE<br/>Expo apps<br/>realtime lists<br/>store-ready auth"]
-  M --> A["004 / AI WORKFLOWS<br/>Codex skills<br/>edge functions<br/>review loops"]
-  A --> C["005 / CLOUD DATA<br/>Supabase<br/>Azure queues<br/>observability"]
-  C --> O["SHIPPED<br/>SURFACES"]
-
-  classDef root fill:#204F20,stroke:#204F20,color:#F5E0C5;
-  classDef lane fill:#F5E0C5,stroke:#204F20,color:#204F20;
-  classDef output fill:#204F20,stroke:#204F20,color:#F5E0C5;
-  class ROOT root;
-  class S,W,M,A,C lane;
-  class O output;
-```
-
-<br>
+<table width="100%">
+<tr>
+<td width="18%" align="center"><strong>001</strong><br><sub>SYSTEMS</sub></td>
+<td><code>Rust CLIs</code> &middot; <code>native installers</code> &middot; <code>update paths</code></td>
+</tr>
+<tr>
+<td align="center"><strong>002</strong><br><sub>WEB</sub></td>
+<td><code>Next.js products</code> &middot; <code>studio surfaces</code> &middot; <code>admin consoles</code></td>
+</tr>
+<tr>
+<td align="center"><strong>003</strong><br><sub>MOBILE</sub></td>
+<td><code>Expo apps</code> &middot; <code>realtime lists</code> &middot; <code>store-ready auth</code></td>
+</tr>
+<tr>
+<td align="center"><strong>004</strong><br><sub>AI WORKFLOWS</sub></td>
+<td><code>Codex skills</code> &middot; <code>edge functions</code> &middot; <code>review loops</code></td>
+</tr>
+<tr>
+<td align="center"><strong>005</strong><br><sub>CLOUD DATA</sub></td>
+<td><code>Supabase</code> &middot; <code>Azure queues</code> &middot; <code>observability</code></td>
+</tr>
+</table>
 
 ### Working Set
 
@@ -306,17 +307,16 @@ This profile is a GitHub-safe SHAUGHV translation: type-forward, proof-first, cr
 | GFM alert (`> [!NOTE]`) | `LATEST SHIPS` |
 | `<details>` / `<summary>` | TOC, archive sections, colophon |
 | HTML tables | Hero proof strip, selected systems, paired stats cards |
-| Mermaid `flowchart` | `STACK` operating map |
 | Live shields | Contact pills, profile metrics, stack badges |
 | Theme-aware widget cards | Streak, top languages, activity graph |
 | Heading auto-anchors | TOC links |
 | HTML entities | Mid-dot separators, non-breaking spacing, escaped symbols |
 
-Blocked by design: inline SVG, script tags, style attributes, class attributes, iframes, forms, video, audio, and new-tab target attributes. Everything visible here is plain markdown, sanitizer-safe HTML, Mermaid, or a parameterized image URL.
+Blocked by design: inline SVG, script tags, style attributes, class attributes, iframes, forms, video, audio, and new-tab target attributes. Everything visible here is plain markdown, sanitizer-safe HTML, live badges, or a parameterized image URL.
 
 Deferred unless this repo's no-Actions rule changes: generated contribution animations, lowlighter-style metrics dashboards, 3D contribution grids, and WakaTime cards.
 
-Renderer references: [html-pipeline](https://github.com/gjtorikian/html-pipeline), [GitHub dark/light images guidance](https://github.blog/developer-skills/github/how-to-make-your-images-in-markdown-on-github-adjust-for-dark-mode-and-light-mode/), and [GitHub Mermaid docs](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-diagrams).
+Renderer references: [html-pipeline](https://github.com/gjtorikian/html-pipeline) and [GitHub dark/light images guidance](https://github.blog/developer-skills/github/how-to-make-your-images-in-markdown-on-github-adjust-for-dark-mode-and-light-mode/).
 
 </details>
 

@@ -25,7 +25,7 @@ Read this file before editing `README.md`, then check `DESIGN_SYSTEM.md` for vis
 2. TOC               Collapsible jump navigation
 3. LATEST SHIPS      Three high-signal current proof entries
 4. SELECTED SYSTEMS  Five indexed selected systems
-5. STACK             Flowchart operating map and focused working-set badges
+5. STACK             Compact operating table and focused working-set badges
 6. NUMBERS           Live GitHub/profile metrics and widgets
 7. WORKSHOP ARCHIVE  Collapsed release depth and secondary work
 8. COLOPHON          Renderer catalogue and footer banner
@@ -85,7 +85,7 @@ To add a new selected system, demote one existing system to `WORKSHOP ARCHIVE` u
 
 Operating map, not a keyword dump.
 
-Current Mermaid flowchart lanes:
+Current stack table lanes:
 
 - `SYSTEMS`.
 - `WEB`.
@@ -173,7 +173,7 @@ Update the technique table whenever a technique is added or removed. Keep the fo
 
 ### Update Stack
 
-1. Edit the Mermaid flowchart only if the operating categories changed.
+1. Edit the stack table only if the operating categories changed.
 2. Keep the five-lane model unless the whole profile strategy changes.
 3. Add badges only for tools that reinforce current positioning.
 
