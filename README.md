@@ -8,12 +8,9 @@
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=F5E0C5&height=190&section=header&text=EMMETT%20SHAUGHNESSY&fontColor=204F20&fontSize=64&fontAlignY=38&desc=DIGITAL%20CRAFTSMAN&descSize=18&descAlignY=60&descAlign=50">
-  <img alt="Emmett Shaughnessy, Digital Craftsman" src="https://capsule-render.vercel.app/api?type=waving&color=204F20&height=190&section=header&text=EMMETT%20SHAUGHNESSY&fontColor=F5E0C5&fontSize=64&fontAlignY=38&desc=DIGITAL%20CRAFTSMAN&descSize=18&descAlignY=60&descAlign=50">
-</picture>
+<h1>EMMETT SHAUGHNESSY</h1>
 
-<br>
+<strong>DIGITAL CRAFTSMAN</strong>
 
 **Rust diagnostics / agent tooling / full-stack product systems.**
 
@@ -310,7 +307,8 @@ This profile is a GitHub-safe SHAUGHV translation: type-forward, proof-first, cr
 
 | Technique | Where it is used here |
 |---|---|
-| `&lt;picture&gt;` + `prefers-color-scheme` | Header banner, streak card, top-langs card, activity graph, footer banner |
+| Static text lockup | Hero identity and footer close |
+| `&lt;picture&gt;` + `prefers-color-scheme` | Streak card, top-langs card, activity graph |
 | GFM alert (`> [!NOTE]`) | `LATEST SHIPS` |
 | `<details>` / `<summary>` | TOC, archive sections, colophon |
 | HTML tables | Hero proof strip, selected systems, paired stats cards |
@@ -330,7 +328,10 @@ Renderer references: [html-pipeline](https://github.com/gjtorikian/html-pipeline
 
 ---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=F5E0C5&height=140&section=footer&text=BUILDING+RELIABLE+SYSTEMS&fontColor=204F20&fontSize=22&fontAlignY=70&desc=HEY%40EMMETTS.DEV+%C2%B7+EMMETTSHAUGHNESSY.COM&descSize=12&descAlignY=88&descAlign=50">
-  <img alt="Building reliable systems, hey@emmetts.dev, emmettshaughnessy.com" src="https://capsule-render.vercel.app/api?type=waving&color=204F20&height=140&section=footer&text=BUILDING+RELIABLE+SYSTEMS&fontColor=F5E0C5&fontSize=22&fontAlignY=70&desc=HEY%40EMMETTS.DEV+%C2%B7+EMMETTSHAUGHNESSY.COM&descSize=12&descAlignY=88&descAlign=50">
-</picture>
+<div align="center">
+
+**BUILDING RELIABLE SYSTEMS**
+
+<sub>HEY@EMMETTS.DEV &middot; EMMETTSHAUGHNESSY.COM</sub>
+
+</div>

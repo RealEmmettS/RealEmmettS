@@ -21,7 +21,7 @@ Read this file before editing `README.md`, then check `DESIGN_SYSTEM.md` for vis
 ## Current README Structure
 
 ```text
-1. HERO              Static identity banner, positioning line, proof strip, contact pills
+1. HERO              Static identity lockup, positioning line, proof strip, contact pills
 2. TOC               Collapsible jump navigation
 3. LATEST SHIPS      Three high-signal current proof entries
 4. SELECTED SYSTEMS  Five indexed selected systems
@@ -41,7 +41,7 @@ The TOC is not counted as a content movement, but it must stay directly below th
 
 Static unless the positioning changes.
 
-- Capsule banner: Emmett Shaughnessy / Digital Craftsman.
+- Static text lockup: Emmett Shaughnessy / Digital Craftsman.
 - Positioning line: `Rust diagnostics / agent tooling / full-stack product systems.`
 - One short paragraph naming the current focus.
 - Four-cell proof strip.

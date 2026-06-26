@@ -61,7 +61,7 @@ Dark-mode `srcset` uses forest background with cream foreground. Light-mode `img
 The README has seven movements in this order:
 
 ```text
-1. HERO              Static identity banner, positioning line, proof strip, contact pills
+1. HERO              Static identity lockup, positioning line, proof strip, contact pills
 2. LATEST SHIPS      GFM note with exactly 3 compact proof entries
 3. SELECTED SYSTEMS  Indexed selected-work table with 5 systems
 4. STACK             Mermaid operating map + focused badge set
@@ -80,8 +80,9 @@ Do not add an eighth top-level section without removing or merging another one. 
 
 ### Hero
 
-- Keep the capsule-render banner static. Do not add typing animations.
-- The first text line under the banner is a short positioning statement.
+- Use a static text lockup: `EMMETT SHAUGHNESSY`, `DIGITAL CRAFTSMAN`, then the positioning statement.
+- Do not add typing animations or third-party hero banner images.
+- The first sentence after the lockup is a short positioning statement.
 - The proof strip is a four-cell table. Each cell has a short uppercase label and a `<sub>` explanation.
 - Contact pills stay in the hero. Vanity metrics do not.
 
@@ -167,7 +168,6 @@ Run these checks before pushing:
 
 | Service | Use |
 |---|---|
-| `capsule-render.vercel.app` | Header and footer wave banners |
 | `img.shields.io` | Contact, metric, and stack badges |
 | `komarev.com/ghpvc` | Profile view counter |
 | `streak-stats.demolab.com` | Streak card |
