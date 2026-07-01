@@ -46,13 +46,13 @@ I build operational software that survives real installers, real users, and real
 ## LATEST SHIPS
 
 > [!NOTE]
-> **JUNE 2026, selected proof**
+> **JULY 2026, selected proof**
 >
-> &middot; **Multi-agent delivery loop.** My day-to-day engineering now runs as a real multi-agent loop: a coding agent executes scoped tasks from an MCP-backed task queue while Claude Code hooks handle heartbeat, check-in, checkout, and stalled-task detection. shaughv-code and WB-300 are the public tooling layer behind it. [shaughv-code](https://github.com/RealEmmettS/shaughv-code).
+> &middot; **Agent task system, now standalone.** My multi-agent loop runs a coding agent against an MCP-backed task queue while Claude Code hooks handle heartbeat, check-in, checkout, and stalled-task detection. The task and workplace-memory layer is now extracted into shaughv-tasks, a dual-surface Claude Code + Codex plugin that installs on its own in any agent. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks).
+>
+> &middot; **goose, a Rust desktop companion.** A native desktop pet rebuilt from scratch in Rust across fifteen milestones: a task state machine with wander and idle behavior, bundled original audio, hover and click hit-testing, foreign-window perching, multi-monitor appearance, and quiet-hours scheduling, all driven from a CLI/TUI control plane with installer preflight. [Repository](https://github.com/RealEmmettS/goose).
 >
 > &middot; **Data platform reliability.** Hardened a production data-sync platform: webhook-driven freshness signals that replace poll-recency false-alerts, pre-MERGE source de-duplication to stop "matched multiple source rows" failures, financial ledger parity views with duplicate-key triage, and a restored weekly delete-reconciliation cadence. Python sync workers on Azure Functions and Container Apps Jobs over SQL Server. [Project notes](#workshop-archive).
->
-> &middot; **WB-300 `v2.0.0`.** The workbranch control tower models real git topology as repo / trunk / workbranch / task, then shows active branches, agents, lifecycle stage, worktree paths, and edited files in one terminal view. It turns multi-agent development from scattered tabs into an inspectable system. [Repository](https://github.com/QubeTX/qube-workbranch-view).
 
 ---
 
@@ -126,7 +126,7 @@ AI list helpers
 ### [shaughv-code](https://github.com/RealEmmettS/shaughv-code)
 `Codex` `Skills` `MCP` `Design`
 
-My personal Codex plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository.
+My personal Codex plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository. The task and workplace-memory skills now also ship separately as shaughv-tasks.
 
 </td>
 <td width="28%" valign="top">
@@ -135,7 +135,7 @@ My personal Codex plugin and skill library. It packages practical operating syst
 
 [Repository](https://github.com/RealEmmettS/shaughv-code)<br>
 `v0.25.0` plugin<br>
-SHAUGHV design skill
+[shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
 
 </td>
 </tr>
@@ -272,6 +272,8 @@ Admin analytics
 &nbsp;
 
 - **SHAUGHV brand system.** `shaughv-cdn` hosts versioned brand assets, fonts, and static/animated mark drop-ins behind a manifest at [`cdn.shaughv.com/tree.json`](https://cdn.shaughv.com/tree.json). `shaughv_vintage` carries the cream-and-sage personal portfolio variant, Pretext text fitting, scrollspy, dot-field motion, and project-level automation.
+- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code` into its own dual-surface Claude Code + Codex plugin, distributed through both marketplaces and `npx skills add`.
+- **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop-companion app remade for modern computing with original bundled assets, a milestone-driven engine (task state machine, audio, hit-testing, foreign-window perch, multi-monitor), and a CLI/TUI control plane.
 - **Video and media.** `italy-trip-video` is a Remotion birthday-trip slideshow with timed captions and a CapCut polish path. It was scaffolded through the video workflow in `shaughv-code`.
 - **Web tools.** `qrgen` is a QR-code generator and AI styling surface with a SHAUGHV product UI. `realtime2_test` is an OpenAI Realtime API voice-agent prototype with pure shared handlers across Express and Vercel functions.
 - **Qube TX surfaces.** [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage), [`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables), SpeedQX, nd300, and SD-300 sit around the main diagnostics product line.
