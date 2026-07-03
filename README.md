@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JULY 2026, selected proof**
 >
-> &middot; **Agent task system, now standalone.** My multi-agent loop runs a coding agent against an MCP-backed task queue while Claude Code hooks handle heartbeat, check-in, checkout, and stalled-task detection. The task and workplace-memory layer is now extracted into shaughv-tasks, a dual-surface Claude Code + Codex plugin that installs on its own in any agent. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks).
+> &middot; **Magic Pantry, store-ready.** The cross-platform pantry app reached Play Store release prep: a signed Android build, full store listing art and device screenshots, and a standing review account. The same sprint moved recipe generation and categorization onto Sonnet 5 with adaptive high-effort, added separator-flexible multi-item smart add, and rebuilt recipe-URL import around a schema.org JSON-LD fast path with a Firecrawl fallback.
 >
-> &middot; **goose, a Rust desktop companion.** A native desktop pet rebuilt from scratch in Rust across fifteen milestones: a task state machine with wander and idle behavior, bundled original audio, hover and click hit-testing, foreign-window perching, multi-monitor appearance, and quiet-hours scheduling, all driven from a CLI/TUI control plane with installer preflight. [Repository](https://github.com/RealEmmettS/goose).
+> &middot; **shaughv-tasks 0.2.0.** My standalone task and workplace-memory plugin shipped its 0.2.0 platform release: milestones, verification gates, shared multi-board support with safety guards, and a secure store. It is already dogfooded in live work, with Magic Pantry migrating its own project board onto it. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks).
 >
-> &middot; **Data platform reliability.** Hardened a production data-sync platform: webhook-driven freshness signals that replace poll-recency false-alerts, pre-MERGE source de-duplication to stop "matched multiple source rows" failures, financial ledger parity views with duplicate-key triage, and a restored weekly delete-reconciliation cadence. Python sync workers on Azure Functions and Container Apps Jobs over SQL Server. [Project notes](#workshop-archive).
+> &middot; **goose, release-ready.** The Rust desktop companion closed its M16 to M18 readiness track with cross-platform CI: macOS universal-binary (lipo) verification, headless Linux and Wayland smoke tests, and cross-platform invoked-name coverage, with CI readiness evidence recorded across the milestones. [Repository](https://github.com/RealEmmettS/goose).
 
 ---
 
@@ -106,16 +106,16 @@ Machine-wide tree view
 ### Magic Pantry
 `Expo` `React Native` `Supabase` `Anthropic`
 
-A rebuilt cross-platform pantry app on Supabase, Expo, Realtime, RLS, and AI edge functions. Recent work made the list offline-first and collaborative, with durable queue replay, row-level merge rules, AI categorization, recipe generation, URL import, substitutions, and App Store-ready auth flows.
+A rebuilt cross-platform pantry app on Supabase, Expo, Realtime, RLS, and AI edge functions. It is now in store-release prep with a signed Android build and full listing assets, an offline-first collaborative list with durable queue replay and row-level merge, and an AI layer on Sonnet 5 for categorization, recipe generation, substitutions, and schema-aware URL import.
 
 </td>
 <td width="28%" valign="top">
 
 **Evidence**
 
-Offline queue<br>
-Realtime merge<br>
-AI list helpers
+Store-ready build<br>
+Sonnet 5 AI layer<br>
+Recipe URL import
 
 </td>
 </tr>
@@ -260,7 +260,7 @@ Admin analytics
 
 - **TR-300 v3.17.0.** Migrate-cleanup detects and removes previous install kinds when installing through a new channel, so Windows installer, cargo, and bare-binary installs do not fight each other. It follows the v3.16.0 stability pass across collectors, output, builds, install/update behavior, self-update reliability, and test coverage.
 - **QubeTX_Landing v3.2.0.** The studio site added a self-documenting design-system page, live terminal kit, downloadable brand kit, ScrollTrace, stat count-ups, and a denser product-line story.
-- **Magic Pantry 2.0.2.** Offline-first durability and realtime merge sit on top of Phases I-L: smart entry, recipe library, substitutions, sort modes, store-ready auth, EAS production wiring, and Supabase migration tooling.
+- **Magic Pantry, store push.** A signed Android build, Play Store listing art and device screenshots, and a standing review account now sit on top of the offline-first realtime core, with the AI recipe trio moved to Sonnet 5 adaptive high-effort and recipe-URL import rebuilt around a schema.org JSON-LD fast path.
 - **shaughv-code v0.25.0.** The skill bundle now spans design, audio, Mistral, Quiver, security, changelogs, branch control, image work, storage, handoff, learning, productivity, and TT;DR summaries.
 - **qork CLI v1.1.1.** The terminal shortener ships native installers, liveness checks, `qork help`, origin-aware uninstall, installer-preferred updates, and source attribution back into QorkMe analytics.
 
@@ -272,8 +272,8 @@ Admin analytics
 &nbsp;
 
 - **SHAUGHV brand system.** `shaughv-cdn` hosts versioned brand assets, fonts, and static/animated mark drop-ins behind a manifest at [`cdn.shaughv.com/tree.json`](https://cdn.shaughv.com/tree.json). `shaughv_vintage` carries the cream-and-sage personal portfolio variant, Pretext text fitting, scrollspy, dot-field motion, and project-level automation.
-- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code` into its own dual-surface Claude Code + Codex plugin, distributed through both marketplaces and `npx skills add`.
-- **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop-companion app remade for modern computing with original bundled assets, a milestone-driven engine (task state machine, audio, hit-testing, foreign-window perch, multi-monitor), and a CLI/TUI control plane.
+- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code` into its own dual-surface Claude Code + Codex plugin. Its 0.2.0 platform release added milestones, verification gates, shared multi-board support with safety guards, and a secure store, and it is distributed through both marketplaces and `npx skills add`.
+- **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop-companion app remade for modern computing with original bundled assets, a milestone-driven engine (task state machine, audio, hit-testing, foreign-window perch, multi-monitor), and a CLI/TUI control plane, now with cross-platform CI across its M16 to M18 readiness track (macOS universal-binary checks, headless Linux and Wayland smoke tests).
 - **Video and media.** `italy-trip-video` is a Remotion birthday-trip slideshow with timed captions and a CapCut polish path. It was scaffolded through the video workflow in `shaughv-code`.
 - **Web tools.** `qrgen` is a QR-code generator and AI styling surface with a SHAUGHV product UI. `realtime2_test` is an OpenAI Realtime API voice-agent prototype with pure shared handlers across Express and Vercel functions.
 - **Qube TX surfaces.** [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage), [`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables), SpeedQX, nd300, and SD-300 sit around the main diagnostics product line.
