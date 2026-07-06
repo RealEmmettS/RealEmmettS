@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JULY 2026, selected proof**
 >
+> &middot; **SpeedQX, one measurement spec across three surfaces.** The Qube TX diagnostics line landed SpeedQX Methodology 4.0, a canonical measurement specification committed byte-identical across the speed-test website, mobile app, and Rust CLI so every surface reports the same numbers. It runs on the ND-300 network-diagnostics engine: a cross-platform CLI with 25 deep network checks and a six-provider merged speed test with inverse-variance weighting and bootstrap confidence intervals. [Repository](https://github.com/QubeTX/qube-network-diagnostics).
+>
+> &middot; **shaughv-code v0.31.0.** My Codex and Claude Code plugin library added a subagent-model-preference skill that encodes a standing model and effort convention as an installable rule, and rebuilt its usage-statusline: live context and burn-rate bars with trend arrows, threshold coloring, eighth-block precision, and a worktree-aware git branch and thinking-level readout driven by pure .git/HEAD reads. [Repository](https://github.com/RealEmmettS/shaughv-code).
+>
 > &middot; **Magic Pantry, store-ready.** The cross-platform pantry app reached Play Store release prep: a signed Android build, full store listing art and device screenshots, and a standing review account. The same sprint moved recipe generation and categorization onto Sonnet 5 with adaptive high-effort, added separator-flexible multi-item smart add, and rebuilt recipe-URL import around a schema.org JSON-LD fast path with a Firecrawl fallback.
->
-> &middot; **shaughv-tasks 0.2.0.** My standalone task and workplace-memory plugin shipped its 0.2.0 platform release: milestones, verification gates, shared multi-board support with safety guards, and a secure store. It is already dogfooded in live work, with Magic Pantry migrating its own project board onto it. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks).
->
-> &middot; **goose, release-ready.** The Rust desktop companion closed its M16 to M18 readiness track with cross-platform CI: macOS universal-binary (lipo) verification, headless Linux and Wayland smoke tests, and cross-platform invoked-name coverage, with CI readiness evidence recorded across the milestones. [Repository](https://github.com/RealEmmettS/goose).
 
 ---
 
@@ -66,7 +66,7 @@ I build operational software that survives real installers, real users, and real
 ### [Qube TX](https://qubetx.com)
 `Rust` `TypeScript` `Next.js` `CLI`
 
-Diagnostics tooling and web studio work centered on Rust CLIs, installers, updater reliability, and the marketing surfaces that explain them. TR-300 has shipped as a canonical crate with native Windows distribution, cross-platform collector hardening, installer hash checks, profile-write safeguards, and single-install migration cleanup.
+Diagnostics tooling and web studio work centered on Rust CLIs, installers, updater reliability, and the marketing surfaces that explain them. The line now spans machine reporting (TR-300) and network diagnostics (ND-300 / SpeedQX): a cross-platform CLI with 25 deep network checks and a six-provider merged speed test with confidence intervals, unified under the SpeedQX Methodology 4.0 measurement spec. Both ship as canonical crates with native Windows distribution, cross-platform collector hardening, installer hash checks, and single-install migration cleanup.
 
 </td>
 <td width="28%" valign="top">
@@ -74,7 +74,7 @@ Diagnostics tooling and web studio work centered on Rust CLIs, installers, updat
 **Evidence**
 
 [TR-300](https://github.com/QubeTX/qube-machine-report)<br>
-[Qube TX site](https://github.com/QubeTX/QubeTX_Landing)<br>
+[ND-300](https://github.com/QubeTX/qube-network-diagnostics)<br>
 [SpeedQX](https://github.com/QubeTX/speedtest)
 
 </td>
@@ -126,7 +126,7 @@ Recipe URL import
 ### [shaughv-code](https://github.com/RealEmmettS/shaughv-code)
 `Codex` `Skills` `MCP` `Design`
 
-My personal Codex plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository. The task and workplace-memory skills now also ship separately as shaughv-tasks.
+My personal Codex and Claude Code plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository. Recent releases added a subagent-model-preference skill and a rebuilt usage-statusline with live burn-rate bars, trend arrows, and a git branch readout. The task and workplace-memory skills also ship separately as shaughv-tasks.
 
 </td>
 <td width="28%" valign="top">
@@ -134,7 +134,7 @@ My personal Codex plugin and skill library. It packages practical operating syst
 **Evidence**
 
 [Repository](https://github.com/RealEmmettS/shaughv-code)<br>
-`v0.25.0` plugin<br>
+`v0.31.0` plugin<br>
 [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
 
 </td>
@@ -261,7 +261,8 @@ Admin analytics
 - **TR-300 v3.17.0.** Migrate-cleanup detects and removes previous install kinds when installing through a new channel, so Windows installer, cargo, and bare-binary installs do not fight each other. It follows the v3.16.0 stability pass across collectors, output, builds, install/update behavior, self-update reliability, and test coverage.
 - **QubeTX_Landing v3.2.0.** The studio site added a self-documenting design-system page, live terminal kit, downloadable brand kit, ScrollTrace, stat count-ups, and a denser product-line story.
 - **Magic Pantry, store push.** A signed Android build, Play Store listing art and device screenshots, and a standing review account now sit on top of the offline-first realtime core, with the AI recipe trio moved to Sonnet 5 adaptive high-effort and recipe-URL import rebuilt around a schema.org JSON-LD fast path.
-- **shaughv-code v0.25.0.** The skill bundle now spans design, audio, Mistral, Quiver, security, changelogs, branch control, image work, storage, handoff, learning, productivity, and TT;DR summaries.
+- **ND-300 / SpeedQX.** The Qube TX network-diagnostics CLI (`nd300` + `speedqx`) reached a hardening release: 25 deep network checks, a six-provider merged speed test (M-Lab NDT7/MSAK, Apple networkQuality, LibreSpeed, Cloudflare, fast.com) with inverse-variance weighting and bootstrap confidence intervals, an evidence-driven auto-remediation fix loop, and a Windows installer matrix with hardened self-update. SpeedQX Methodology 4.0 now pins the measurement spec byte-identical across the website, app, and CLI.
+- **shaughv-code v0.31.0.** Added a subagent-model-preference skill and a rebuilt usage-statusline (live context and burn-rate bars, trend arrows, threshold coloring, eighth-block precision, worktree-aware git branch and thinking-level readout). The bundle spans design, audio, Mistral, Quiver, security, changelogs, branch control, image work, storage, handoff, learning, productivity, and TT;DR summaries.
 - **qork CLI v1.1.1.** The terminal shortener ships native installers, liveness checks, `qork help`, origin-aware uninstall, installer-preferred updates, and source attribution back into QorkMe analytics.
 
 </details>
@@ -276,7 +277,7 @@ Admin analytics
 - **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop-companion app remade for modern computing with original bundled assets, a milestone-driven engine (task state machine, audio, hit-testing, foreign-window perch, multi-monitor), and a CLI/TUI control plane, now with cross-platform CI across its M16 to M18 readiness track (macOS universal-binary checks, headless Linux and Wayland smoke tests).
 - **Video and media.** `italy-trip-video` is a Remotion birthday-trip slideshow with timed captions and a CapCut polish path. It was scaffolded through the video workflow in `shaughv-code`.
 - **Web tools.** `qrgen` is a QR-code generator and AI styling surface with a SHAUGHV product UI. `realtime2_test` is an OpenAI Realtime API voice-agent prototype with pure shared handlers across Express and Vercel functions.
-- **Qube TX surfaces.** [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage), [`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables), SpeedQX, nd300, and SD-300 sit around the main diagnostics product line.
+- **Qube TX surfaces.** [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage), [`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables), the [ND-300 network-diagnostics CLI](https://github.com/QubeTX/qube-network-diagnostics), [SpeedQX](https://github.com/QubeTX/speedtest), and SD-300 sit around the main diagnostics product line.
 - **Client and artist sites.** [Dorsey 2026](https://github.com/QubeTX/dorsey_2026_BETA) rebuilds a touring musician's web presence on the modern Next.js / React / Tailwind stack while preserving the original visual language.
 
 </details>
