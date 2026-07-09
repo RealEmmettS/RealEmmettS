@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JULY 2026, selected proof**
 >
-> &middot; **SpeedQX, one measurement spec across three surfaces.** The Qube TX diagnostics line landed SpeedQX Methodology 4.0, a canonical measurement specification committed byte-identical across the speed-test website, mobile app, and Rust CLI so every surface reports the same numbers. It runs on the ND-300 network-diagnostics engine: a cross-platform CLI with 25 deep network checks and a six-provider merged speed test with inverse-variance weighting and bootstrap confidence intervals. [Repository](https://github.com/QubeTX/qube-network-diagnostics).
+> &middot; **Self-hosted CI, shipping unblocked.** Migrated continuous integration and deploys across roughly nine repositories off hosted GitHub Actions onto a self-hosted, Docker-free runner: a KEDA-scaled Azure Container Apps consumption job registered at the org level, after exhausted shared Actions minutes had frozen every release. The cutover swapped a Docker-based static-web-app deploy for the SWA CLI, moved image builds to managed ACR, repointed the org-wide reusable CI gate, and rolled out pilot-first behind an operator sign-off.
 >
-> &middot; **shaughv-code v0.31.0.** My Codex and Claude Code plugin library added a subagent-model-preference skill that encodes a standing model and effort convention as an installable rule, and rebuilt its usage-statusline: live context and burn-rate bars with trend arrows, threshold coloring, eighth-block precision, and a worktree-aware git branch and thinking-level readout driven by pure .git/HEAD reads. [Repository](https://github.com/RealEmmettS/shaughv-code).
+> &middot; **ND-300 / SpeedQX, measurement honesty.** The Qube TX network-diagnostics line shipped a statistical-integrity pass in lockstep across the Rust CLI, website, and iOS app: it now withholds the cross-provider I-squared agreement figure when too few sources graded a run, names M-Lab Locate rate limits plainly instead of surfacing them as parse errors, short-circuits redundant probes into an already-tripped limiter, and bumped a crate to clear a RUSTSEC advisory. [Repository](https://github.com/QubeTX/qube-network-diagnostics).
 >
-> &middot; **Magic Pantry, store-ready.** The cross-platform pantry app reached Play Store release prep: a signed Android build, full store listing art and device screenshots, and a standing review account. The same sprint moved recipe generation and categorization onto Sonnet 5 with adaptive high-effort, added separator-flexible multi-item smart add, and rebuilt recipe-URL import around a schema.org JSON-LD fast path with a Firecrawl fallback.
+> &middot; **shaughv-code v0.32.0.** My Codex and Claude Code plugin library scoped its subagent-model-preference skill to Claude only and dropped it from the Codex package build, since its Opus/Sonnet model-class and effort convention has no valid mapping on Codex or GPT. The build script now enforces that exclusion identically on regenerate and validate, so the skill stays present on the Claude surface and absent from the Codex one. [Repository](https://github.com/RealEmmettS/shaughv-code).
 
 ---
 
@@ -66,7 +66,7 @@ I build operational software that survives real installers, real users, and real
 ### [Qube TX](https://qubetx.com)
 `Rust` `TypeScript` `Next.js` `CLI`
 
-Diagnostics tooling and web studio work centered on Rust CLIs, installers, updater reliability, and the marketing surfaces that explain them. The line now spans machine reporting (TR-300) and network diagnostics (ND-300 / SpeedQX): a cross-platform CLI with 25 deep network checks and a six-provider merged speed test with confidence intervals, unified under the SpeedQX Methodology 4.0 measurement spec. Both ship as canonical crates with native Windows distribution, cross-platform collector hardening, installer hash checks, and single-install migration cleanup.
+Diagnostics tooling and web studio work centered on Rust CLIs, installers, updater reliability, and the marketing surfaces that explain them. The line now spans machine reporting (TR-300) and network diagnostics (ND-300 / SpeedQX): a cross-platform CLI with 25 deep network checks and a six-provider merged speed test with confidence intervals, unified under the SpeedQX Methodology 4.0 spec and a recent statistical-integrity pass that withholds low-confidence agreement stats and names upstream rate limits plainly. Both ship as canonical crates with native Windows distribution, cross-platform collector hardening, installer hash checks, and single-install migration cleanup.
 
 </td>
 <td width="28%" valign="top">
@@ -126,7 +126,7 @@ Recipe URL import
 ### [shaughv-code](https://github.com/RealEmmettS/shaughv-code)
 `Codex` `Skills` `MCP` `Design`
 
-My personal Codex and Claude Code plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository. Recent releases added a subagent-model-preference skill and a rebuilt usage-statusline with live burn-rate bars, trend arrows, and a git branch readout. The task and workplace-memory skills also ship separately as shaughv-tasks.
+My personal Codex and Claude Code plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository. Recent releases rebuilt the usage-statusline with live burn-rate bars, trend arrows, and a git-branch readout, then scoped the subagent-model-preference skill to Claude only and dropped it from the Codex package build. The task and workplace-memory skills also ship separately as shaughv-tasks.
 
 </td>
 <td width="28%" valign="top">
@@ -134,7 +134,7 @@ My personal Codex and Claude Code plugin and skill library. It packages practica
 **Evidence**
 
 [Repository](https://github.com/RealEmmettS/shaughv-code)<br>
-`v0.31.0` plugin<br>
+`v0.32.0` plugin<br>
 [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
 
 </td>
@@ -184,7 +184,7 @@ Admin analytics
 </tr>
 <tr>
 <td align="center"><strong>005</strong><br><sub>CLOUD DATA</sub></td>
-<td><code>SQL Server pipelines</code> &middot; <code>Azure queues</code> &middot; <code>freshness + observability</code></td>
+<td><code>SQL Server pipelines</code> &middot; <code>Container Apps + KEDA CI</code> &middot; <code>freshness + observability</code></td>
 </tr>
 </table>
 
@@ -261,8 +261,8 @@ Admin analytics
 - **TR-300 v3.17.0.** Migrate-cleanup detects and removes previous install kinds when installing through a new channel, so Windows installer, cargo, and bare-binary installs do not fight each other. It follows the v3.16.0 stability pass across collectors, output, builds, install/update behavior, self-update reliability, and test coverage.
 - **QubeTX_Landing v3.2.0.** The studio site added a self-documenting design-system page, live terminal kit, downloadable brand kit, ScrollTrace, stat count-ups, and a denser product-line story.
 - **Magic Pantry, store push.** A signed Android build, Play Store listing art and device screenshots, and a standing review account now sit on top of the offline-first realtime core, with the AI recipe trio moved to Sonnet 5 adaptive high-effort and recipe-URL import rebuilt around a schema.org JSON-LD fast path.
-- **ND-300 / SpeedQX.** The Qube TX network-diagnostics CLI (`nd300` + `speedqx`) reached a hardening release: 25 deep network checks, a six-provider merged speed test (M-Lab NDT7/MSAK, Apple networkQuality, LibreSpeed, Cloudflare, fast.com) with inverse-variance weighting and bootstrap confidence intervals, an evidence-driven auto-remediation fix loop, and a Windows installer matrix with hardened self-update. SpeedQX Methodology 4.0 now pins the measurement spec byte-identical across the website, app, and CLI.
-- **shaughv-code v0.31.0.** Added a subagent-model-preference skill and a rebuilt usage-statusline (live context and burn-rate bars, trend arrows, threshold coloring, eighth-block precision, worktree-aware git branch and thinking-level readout). The bundle spans design, audio, Mistral, Quiver, security, changelogs, branch control, image work, storage, handoff, learning, productivity, and TT;DR summaries.
+- **ND-300 / SpeedQX v3.5.x.** The Qube TX network-diagnostics CLI (`nd300` + `speedqx`) reached a hardening release: 25 deep network checks, a six-provider merged speed test (M-Lab NDT7/MSAK, Apple networkQuality, LibreSpeed, Cloudflare, fast.com) with inverse-variance weighting and bootstrap confidence intervals, an evidence-driven auto-remediation fix loop, and a Windows installer matrix with hardened self-update. SpeedQX Methodology 4.0 pins the measurement spec byte-identical across the website, app, and CLI; the latest pass withholds the I-squared agreement figure on low-source runs, names M-Lab Locate rate limits honestly, short-circuits redundant probes, and cleared a RUSTSEC advisory across CLI 3.5.2, website 3.0.11, and iOS 2.1.0.
+- **shaughv-code v0.32.0.** Rebuilt the usage-statusline (live context and burn-rate bars, trend arrows, threshold coloring, eighth-block precision, worktree-aware git branch and thinking-level readout), then scoped the subagent-model-preference skill to Claude only and excluded it from the Codex package build so the exclusion is enforced identically on regenerate and validate. The bundle spans design, audio, Mistral, Quiver, security, changelogs, branch control, image work, storage, handoff, learning, productivity, and TT;DR summaries.
 - **qork CLI v1.1.1.** The terminal shortener ships native installers, liveness checks, `qork help`, origin-aware uninstall, installer-preferred updates, and source attribution back into QorkMe analytics.
 
 </details>
@@ -287,7 +287,8 @@ Admin analytics
 
 &nbsp;
 
-- **Agent orchestration tooling.** Built a native Rust CLI and ratatui TUI client for an internal MCP task-orchestration system: OAuth 2.0 / PKCE auth with OS-keyring token storage, a streaming HTTP MCP transport verified against a live server, a pre-flight write validator, and a one-command dispatch that prepares a git worktree and launches a coding agent. Cross-platform installers (Windows MSI, macOS DMG, Linux AppImage) build in CI and publish to Azure Blob Storage with a signed checksum manifest. On the server, OAuth tokens now persist to Azure Blob with ETag optimistic concurrency so redeploys no longer force a re-login.
+- **Agent orchestration tooling.** Built a native Rust CLI (two-crate Cargo workspace) for an internal MCP task-orchestration system, wired to a full CI matrix from the first commit: formatting, linting, a three-OS test grid, an MSRV job, and a supply-chain gate. It carries OAuth 2.0 / PKCE auth with OS-keyring token storage, a streaming HTTP MCP transport verified against a live server, a client-side validator of roughly thirty rules that rejects malformed writes before the network, a hermetic harness that boots a throwaway server for true end-to-end tests, and a one-command dispatch that prepares a git worktree and launches a coding agent. Cross-platform installers build in CI and publish to Azure Blob Storage with a signed checksum manifest via federated identity (OIDC). The dashboard gained blob-persisted OAuth tokens (ETag optimistic concurrency, no forced re-login), a sign-in-gated downloads page, and a focus session-runner.
+- **Shipping and platform infrastructure.** Migrated CI and deploys for roughly nine repositories off hosted GitHub Actions onto a self-hosted, Docker-free runner running as a KEDA-scaled Azure Container Apps consumption job, after exhausted shared Actions minutes had frozen releases: swapped a Docker-based static-web-app deploy for the SWA CLI, moved image builds to managed ACR, and repointed the org-wide reusable CI gate, pilot-first behind an operator sign-off. Also cleared a static-web-app staging-environment cap that had blocked all PR previews and stood up multi-region uptime monitoring with 2-of-3-region failure alerting on an existing telemetry resource.
 - **Data platform reliability.** Resumed a paused Azure Container Apps ingestion tier with rate-limit-aware polling against an external REST API, then verified a full day with no HTTP 429 recurrence and confirmed downstream freshness. Also triaged a failing weekly full-reconcile gap-healing job and audited an upstream API's monthly changelog against only the endpoints in use to confirm no regression. Python sync workers over SQL Server with Service Bus queues and App Insights observability.
 - **Security and access hardening.** Ran a security sweep that closed a live unauthenticated data-browse endpoint, rotated an OAuth client secret that had been committed to a tracked file, and purged personal data from git history. Proved Entra ID app-role, per-identity authorization on a shared MCP endpoint with a one-row canary before any sensitive labor data landed, settling the access-gating design empirically.
 - **Reporting product and embedded AI.** Gave an in-report AI chat agent confirm-gated write access through Claude tool-use so it edits structured answers and settings that propagate into the rendered narrative, with full change attribution. Migrated the default model to a newer Sonnet-class Claude model with token streaming, reworked per-report chat into a shared attributed transcript, and added a CDN-first cross-user media cache with webhook-driven freshness and upstream-throttle protection. Python / FastAPI and React / TypeScript on Azure Container Apps and Static Web Apps.
