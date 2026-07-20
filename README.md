@@ -223,19 +223,11 @@ Admin analytics
 
 <table align="center" width="100%">
 <tr>
-<td width="50%" align="center">
+<td width="100%" align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com?user=RealEmmettS&background=204F20&stroke=F5E0C5&ring=F5E0C5&fire=F5E0C5&currStreakNum=F5E0C5&sideNums=F5E0C5&currStreakLabel=F5E0C5&sideLabels=F5E0C5&dates=F5E0C5">
   <img alt="GitHub streak" src="https://streak-stats.demolab.com?user=RealEmmettS&background=F5E0C5&stroke=204F20&ring=204F20&fire=204F20&currStreakNum=204F20&sideNums=204F20&currStreakLabel=204F20&sideLabels=204F20&dates=204F20">
-</picture>
-
-</td>
-<td width="50%" align="center">
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=RealEmmettS&layout=compact&langs_count=10&hide=html,css&size_weight=0.5&count_weight=0.5&bg_color=204F20&title_color=F5E0C5&text_color=F5E0C5&border_color=F5E0C5">
-  <img alt="Top languages, weighted blend of bytes-of-code and commit frequency" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RealEmmettS&layout=compact&langs_count=10&hide=html,css&size_weight=0.5&count_weight=0.5&bg_color=F5E0C5&title_color=204F20&text_color=204F20&border_color=204F20">
 </picture>
 
 </td>
@@ -311,12 +303,12 @@ This profile is a GitHub-safe SHAUGHV translation: type-forward, proof-first, cr
 | Technique | Where it is used here |
 |---|---|
 | Static text lockup | Hero identity and footer close |
-| `&lt;picture&gt;` + `prefers-color-scheme` | Streak card, top-langs card, activity graph |
+| `&lt;picture&gt;` + `prefers-color-scheme` | Streak card, activity graph |
 | GFM alert (`> [!NOTE]`) | `LATEST SHIPS` |
 | `<details>` / `<summary>` | TOC, archive sections, colophon |
-| HTML tables | Hero proof strip, selected systems, paired stats cards |
+| HTML tables | Hero proof strip, selected systems, stats card |
 | Live shields | Contact pills, profile metrics, stack badges |
-| Theme-aware widget cards | Streak, top languages, activity graph |
+| Theme-aware widget cards | Streak, activity graph |
 | Heading auto-anchors | TOC links |
 | HTML entities | Mid-dot separators, non-breaking spacing, escaped symbols |
 
