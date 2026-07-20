@@ -14,7 +14,7 @@
 
 **Rust diagnostics / agent tooling / full-stack product systems.**
 
-I build operational software that survives real installers, real users, and real release loops. Current focus: Qube TX, WB-300, Magic Pantry, shaughv-code, and QorkMe.
+I build operational software that survives real installers, real users, and real release loops. Current focus: Qube TX diagnostics, Goose's native desktop lifecycle, and portable agent tooling.
 
 <table width="100%">
 <tr>
@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JULY 2026, selected proof**
 >
-> &middot; **ND-300 v3.6.0, macOS safety and signed release hardening.** Corrected macOS 26 behavior across the Wi-Fi, route, listener, IPv6, DHCP, VPN, and TLS/DNSSEC checks, and replaced a destructive service delete/recreate path with registered-before-mutation, verified LIFO recovery that stays production-gated off. Also made Unix update/uninstall invoking-user-aware and transactional, and automated fail-closed Developer ID signing, Apple notarization, and Gatekeeper verification with published checksums and attestations. [ND-300](https://github.com/QubeTX/qube-network-diagnostics)
+> &middot; **SD-300 v2.0.6, hardware truth and installer lifecycle.** Expanded the Rust system-diagnostics CLI with explicit observation/provenance, live-qualified driver and thermal reporting, and managed install/update/uninstall across Windows, macOS, and Linux. The release qualifies channel-preserving updates, deliberate same-scope reinstalls, ownership cleanup, checksums, and already-current behavior across native packages, managed scripts, and Cargo. [Release](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v2.0.6)
 >
-> &middot; **Native Rust CLI for the internal agent platform.** Matured a token-free terminal client into a ratatui triage cockpit with one-command dispatch that turns a task into a git worktree and launches a coding agent. Hardened it under a 30-agent adversarial review, persisted OAuth tokens with ETag optimistic concurrency so a redeploy no longer forces re-login, and shipped self-updating Windows MSI installers past a files-in-use failure.
+> &middot; **Goose v1.3.2, Windows lifecycle hardening.** Shipped the Rust desktop companion with detached CLI startup, single-instance protection across launch aliases, resilient notification-area recovery after Explorer restarts, and read-only update discovery. The current release also resolves host architecture correctly inside app terminals so Windows chooses the right native installer without mutating state during discovery. [Release](https://github.com/RealEmmettS/goose/releases/tag/v1.3.2)
 >
-> &middot; **Internal data platform, gated API toward production.** Advanced a FastAPI data gateway (managed identity to Azure SQL, Entra auth, keyset pagination, strict parameter allowlisting) toward retiring an internet-open SQL firewall rule, with Azure Monitor alerting for 5xx bursts, replica restarts, latency, and a zero-row guard on the view swap. Also root-caused stalled ingestion jobs and restored self-serve workbook refresh for a business owner who had no database principal.
+> &middot; **Agent workflow portability across shaughv-tasks and ND-300.** shaughv-tasks v0.2.2 now upgrade-repairs every `.tasks` dashboard on resume, rejects downgrades, and keeps offline bundles portable across marketplace and skills-only installs. ND-300 now commits its Codex/Claude reviewers, hooks, release guidance, and installer checks as path-safe project tooling, giving multiple agents the same verified operating surface. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks) / [ND-300 PR 31](https://github.com/QubeTX/qube-network-diagnostics/pull/31)
 
 ---
 
@@ -64,17 +64,18 @@ I build operational software that survives real installers, real users, and real
 <td width="61%" valign="top">
 
 ### [Qube TX](https://qubetx.com)
-`Rust` `TypeScript` `Next.js` `CLI`
+`Rust` `Installers` `Security` `CI`
 
-Diagnostics tooling and web studio work centered on Rust CLIs, installers, updater reliability, and the marketing surfaces that explain them. The line spans machine reporting (TR-300) and network diagnostics (ND-300 / SpeedQX): a cross-platform CLI with 25 deep network checks and a six-provider merged speed test with confidence intervals, unified under the SpeedQX Methodology 4.0 spec. The v3.6.0 release corrects macOS 26 behavior across the check suite, swaps a destructive service delete/recreate path for verified LIFO recovery, and adds a fail-closed signed-and-notarized release pipeline with published checksums and attestations. Both ship as canonical crates with native Windows distribution, installer hash checks, and single-install migration cleanup.
+Diagnostics tooling and web studio work centered on Rust CLIs that stay honest from hardware probe to public installer. The current line spans TR-300 v4.2.2 machine reporting, ND-300 v3.7.3 network diagnostics / SpeedQX, and SD-300 v2.0.6 system diagnostics. Recent releases preserve proven installer ownership, fail closed on ambiguous state, pin exact artifacts after versionless discovery, ship signed/notarized macOS packages plus native Windows channels, and qualify migrations, reinstalls, rollback, uninstall, checksums, attestations, and already-current JSON on hosted targets and physical Windows hardware.
 
 </td>
 <td width="28%" valign="top">
 
 **Evidence**
 
-[TR-300](https://github.com/QubeTX/qube-machine-report)<br>
-[ND-300](https://github.com/QubeTX/qube-network-diagnostics)<br>
+[TR-300 v4.2.2](https://github.com/QubeTX/qube-machine-report/releases/tag/v4.2.2)<br>
+[ND-300 v3.7.3](https://github.com/QubeTX/qube-network-diagnostics/releases/tag/v3.7.3)<br>
+[SD-300 v2.0.6](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v2.0.6)<br>
 [SpeedQX](https://github.com/QubeTX/speedtest)
 
 </td>
@@ -126,7 +127,7 @@ Recipe URL import
 ### [shaughv-code](https://github.com/RealEmmettS/shaughv-code)
 `Codex` `Skills` `MCP` `Design`
 
-My personal Codex and Claude Code plugin and skill library. It packages practical operating systems for design, reasoning, security review, audio, Mistral API work, human changelogs, branch control, status lines, image work, storage, handoffs, and summary conventions into one portable repository. Recent releases rebuilt the usage-statusline with live burn-rate bars, trend arrows, and a git-branch readout, then scoped the subagent-model-preference skill to Claude only and dropped it from the Codex package build. The task and workplace-memory skills also ship separately as shaughv-tasks.
+My portable Codex and Claude Code operating kit. shaughv-code v0.35.0 packages brand design, critical thinking, security, audio, Mistral, image, Git, release, and workflow skills with shared MCP integrations. shaughv-tasks v0.2.2 carries the companion task/memory layer: milestone-aware boards, verification gates, multi-board safety, secure local storage, portable offline assets, and version-aware upgrade repair on every resume.
 
 </td>
 <td width="28%" valign="top">
@@ -134,8 +135,8 @@ My personal Codex and Claude Code plugin and skill library. It packages practica
 **Evidence**
 
 [Repository](https://github.com/RealEmmettS/shaughv-code)<br>
-`v0.32.0` plugin<br>
-[shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
+[v0.35.0 manifest](https://github.com/RealEmmettS/shaughv-code/blob/main/.codex-plugin/plugin.json)<br>
+[shaughv-tasks v0.2.2](https://github.com/RealEmmettS/shaughv-tasks/blob/main/.claude-plugin/plugin.json)
 
 </td>
 </tr>
@@ -259,12 +260,12 @@ Admin analytics
 
 &nbsp;
 
-- **TR-300 v3.17.0.** Migrate-cleanup detects and removes previous install kinds when installing through a new channel, so Windows installer, cargo, and bare-binary installs do not fight each other. It follows the v3.16.0 stability pass across collectors, output, builds, install/update behavior, self-update reliability, and test coverage.
-- **QubeTX_Landing v3.2.0.** The studio site added a self-documenting design-system page, live terminal kit, downloadable brand kit, ScrollTrace, stat count-ups, and a denser product-line story.
-- **Magic Pantry, store push.** A signed Android build, Play Store listing art and device screenshots, and a standing review account now sit on top of the offline-first realtime core, with the AI recipe trio moved to Sonnet 5 adaptive high-effort and recipe-URL import rebuilt around a schema.org JSON-LD fast path.
-- **ND-300 / SpeedQX v3.6.0.** The Qube TX network-diagnostics CLI (`nd300` + `speedqx`) reached a macOS-safety and release-hardening milestone: corrected macOS 26 behavior across the interface, Wi-Fi, route, IPv6, DHCP, VPN, and TLS/DNSSEC checks, a destructive service delete/recreate path replaced by registered-before-mutation LIFO recovery held production-gated off, invoking-user-aware transactional Unix update/uninstall, and a fail-closed Developer ID signing, Apple notarization, and Gatekeeper pipeline with published checksums and attestations. It builds on the v3.5.x line: 25 deep network checks, a six-provider merged speed test (M-Lab NDT7/MSAK, Apple networkQuality, LibreSpeed, Cloudflare, fast.com) with inverse-variance weighting and bootstrap confidence intervals, and the SpeedQX Methodology 4.0 spec pinned byte-identical across website, app, and CLI.
-- **shaughv-code v0.32.0.** Rebuilt the usage-statusline (live context and burn-rate bars, trend arrows, threshold coloring, eighth-block precision, worktree-aware git branch and thinking-level readout), then scoped the subagent-model-preference skill to Claude only and excluded it from the Codex package build so the exclusion is enforced identically on regenerate and validate. The bundle spans design, audio, Mistral, Quiver, security, changelogs, branch control, image work, storage, handoff, learning, productivity, and TT;DR summaries.
-- **qork CLI v1.1.1.** The terminal shortener ships native installers, liveness checks, `qork help`, origin-aware uninstall, installer-preferred updates, and source attribution back into QorkMe analytics.
+- **SD-300 v2.0.6.** Expanded hardware diagnostics, provenance, driver and thermal reporting, then qualified native and managed update, reinstall, migration, rollback, uninstall, checksum, and already-current paths across the public release lanes.
+- **Goose v1.3.2.** Hardened detached Windows startup, single-instance handling, notification-area recovery, read-only update discovery, terminal-host architecture detection, and origin-preserving native installation.
+- **ND-300 / SpeedQX v3.7.3.** Added a signed, notarized, stapled universal PKG as the direct macOS channel while keeping a byte-identical DMG bridge for immutable older updaters. The 32-asset release passed hosted Intel/Apple Silicon, public Windows-origin, checksum, attestation, and physical Windows update gates.
+- **TR-300 v4.2.2.** Moved ambiguous native Mac ownership checks ahead of package payload mutation, kept Windows current and legacy asset contracts distinct, and made generated PKG lifecycle scripts part of the release lint gate.
+- **shaughv-code v0.35.0 / shaughv-tasks v0.2.2.** The skills bundle now spans the current brand, reasoning, security, media, release, and workflow toolkit; the task plugin adds portable upgrade-only dashboard repair with manifest lockstep on every resume.
+- **Magic Pantry, store push.** A signed Android build and store assets sit on top of the offline-first realtime core, with AI recipe generation and schema-aware URL import prepared for release review.
 
 </details>
 
@@ -274,8 +275,8 @@ Admin analytics
 &nbsp;
 
 - **SHAUGHV brand system.** `shaughv-cdn` hosts versioned brand assets, fonts, and static/animated mark drop-ins behind a manifest at [`cdn.shaughv.com/tree.json`](https://cdn.shaughv.com/tree.json). `shaughv_vintage` carries the cream-and-sage personal portfolio variant, Pretext text fitting, scrollspy, dot-field motion, and project-level automation.
-- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code` into its own dual-surface Claude Code + Codex plugin. Its 0.2.0 platform release added milestones, verification gates, shared multi-board support with safety guards, and a secure store, and it is distributed through both marketplaces and `npx skills add`.
-- **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop-companion app remade for modern computing with original bundled assets, a milestone-driven engine (task state machine, audio, hit-testing, foreign-window perch, multi-monitor), and a CLI/TUI control plane, now with cross-platform CI across its M16 to M18 readiness track (macOS universal-binary checks, headless Linux and Wayland smoke tests).
+- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code`. Version 0.2.2 adds milestones, verification gates, shared multi-board safety, secure local storage, portable offline assets, and version-aware upgrade repair across marketplace and skills-only installs.
+- **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop companion rebuilt for modern operating systems with the original bundled assets, a milestone-driven engine, audio, hit-testing, foreign-window perch, multi-monitor support, and a CLI/TUI control plane. Native releases are qualified across Windows, macOS, and Linux.
 - **Video and media.** `italy-trip-video` is a Remotion birthday-trip slideshow with timed captions and a CapCut polish path. It was scaffolded through the video workflow in `shaughv-code`.
 - **Web tools.** `qrgen` is a QR-code generator and AI styling surface with a SHAUGHV product UI. `realtime2_test` is an OpenAI Realtime API voice-agent prototype with pure shared handlers across Express and Vercel functions.
 - **Qube TX surfaces.** [`qube-machine-report-homepage`](https://github.com/QubeTX/qube-machine-report-homepage), [`qube-reports-executables`](https://github.com/QubeTX/qube-reports-executables), the [ND-300 network-diagnostics CLI](https://github.com/QubeTX/qube-network-diagnostics), [SpeedQX](https://github.com/QubeTX/speedtest), and SD-300 sit around the main diagnostics product line.
@@ -288,12 +289,11 @@ Admin analytics
 
 &nbsp;
 
-- **Agent-orchestration tooling.** Native Rust CLIs (two-crate Cargo workspaces) for an internal MCP task-orchestration platform, CI-gated from the first commit: formatting, linting, a three-OS test grid, an MSRV job, and a supply-chain gate. Between them they carry OAuth 2.0 / PKCE auth with OS-keyring tokens, a hand-rolled streaming HTTP/SSE MCP transport verified against a live server, full parity across the server's tool surface, a client-side validator of roughly thirty rules that rejects malformed writes before the network, a hermetic harness that boots a throwaway server for true end-to-end tests, a numpad-driven TUI triage cockpit, and a one-command dispatch that prepares a git worktree and launches a coding agent. The client is hardened under multi-agent adversarial review, and server-side OAuth tokens now persist with ETag optimistic concurrency so a redeploy no longer forces re-login. Cross-platform installers build in CI, self-update unattended on a per-user MSI channel, and publish to Azure Blob Storage behind a signed checksum manifest via federated identity (OIDC).
-- **Shipping and platform infrastructure.** Migrated CI and deploys for roughly nine repositories off hosted GitHub Actions onto a self-hosted, Docker-free runner running as a KEDA-scaled Azure Container Apps consumption job, after exhausted shared Actions minutes had frozen releases: swapped a Docker-based static-web-app deploy for the SWA CLI, moved image builds to managed ACR, and repointed the org-wide reusable CI gate, pilot-first behind an operator sign-off. A follow-on governance pass added linting and an in-house secret scanner (replacing a third-party one) to that gate, pre-push hooks and dual-review PR enforcement where branch protection is unavailable, and OIDC-federated managed-identity deploys in place of stored tokens. Also cleared a static-web-app staging-environment cap that had blocked all PR previews and stood up multi-region uptime monitoring with 2-of-3-region failure alerting on an existing telemetry resource.
-- **Data platform reliability.** Root-caused a reporting-snapshot pipeline that had silently failed for weeks, a duplicate source row fanning a SQL view into a MERGE primary-key violation that also killed the job's own error logging, and hardened it with row-number deduplication, transaction-state-aware logging, and owner-context stored procedures. Separately widened a financial reporting dataset to full column parity with its source system, backfilled roughly 525K historical rows across two tenants with dollar totals preserved exactly, and materialized integrated views the workbook reads directly; resumed a paused Azure Container Apps ingestion tier with rate-limit-aware polling verified over a full day with no HTTP 429 recurrence. Python sync workers over SQL Server with Service Bus queues and App Insights observability.
-- **Security and access hardening.** Advanced a FastAPI data-gateway Container App (managed identity to Azure SQL, Entra-gated auth, keyset pagination, strict input allowlisting) toward production to move a business-critical spreadsheet off a direct database connection and retire an internet-open SQL firewall rule, with Azure Monitor alerting for 5xx bursts, replica restarts, latency, and a zero-row guard on the view swap. Ran secret-scanning sweeps that closed a live unauthenticated data-browse endpoint, revoked and history-purged live API tokens committed to tracked files, and rotated shared credentials. Made task completion an operator-only gate in the agent platform's MCP server so agents cannot self-approve their own work, and proved Entra ID app-role, per-identity authorization on a shared MCP endpoint with a one-row canary before any sensitive data landed.
-- **Reporting product and embedded AI.** Gave an in-report AI chat agent confirm-gated write access through Claude tool-use so it edits structured answers and settings that propagate into the rendered narrative, with full change attribution. Migrated the default model to a newer Sonnet-class Claude model with token streaming, reworked per-report chat into a shared attributed transcript, and added a CDN-first cross-user media cache with webhook-driven freshness and upstream-throttle protection. Python / FastAPI and React / TypeScript on Azure Container Apps and Static Web Apps.
-- **Operator and projection surfaces.** Fixed a row-shift correctness bug in a spreadsheet-backed projection tool by keying pinned cells to a stable project code via XLOOKUP, unblocking an unattended daily cloud refresh scoped to a least-privilege Microsoft Graph permission. Shipped WCAG-AA tri-state dark-mode token systems across multiple products and upstreamed them into the canonical internal design system.
+- **Agent orchestration.** Rust MCP clients and ratatui control surfaces with OAuth 2.0 / PKCE, keyring storage, SSE transport, preflight validation, hermetic end-to-end tests, and one-command worktree/agent dispatch. CI produces cross-platform, self-updating per-user installers through federated cloud identity.
+- **Shipping infrastructure.** Moved multi-repository CI and deploys to a self-hosted, scale-to-zero cloud runner, then tightened reusable gates with linting, secret scanning, dual review, OIDC, and multi-region alerts. Preview environments and production deploys remain token-minimized.
+- **Data reliability.** Hardened Python/FastAPI and SQL Server pipelines with deduplication, transactional error logging, managed identity, strict query allowlists, keyset pagination, queue-driven sync, rate-limit-aware polling, and Azure observability. Restored self-serve refresh paths and guarded view swaps against empty publishes.
+- **Security and access.** Closed unauthenticated browse paths, purged committed secrets, rotated credentials, moved agents behind operator-only completion gates, and proved Entra app-role authorization with a canary before sensitive workloads.
+- **Embedded AI and operator surfaces.** Built confirm-gated Claude tool use into a React/FastAPI reporting surface with shared attributed transcripts, streaming, CDN caching, webhook freshness, and WCAG-AA dark-mode tokens.
 
 </details>
 
