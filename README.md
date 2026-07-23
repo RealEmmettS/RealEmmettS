@@ -14,7 +14,7 @@
 
 **Rust diagnostics / agent tooling / full-stack product systems.**
 
-I build operational software that survives real installers, real users, and real release loops. Current focus: Qube TX diagnostics, Goose's native desktop lifecycle, and portable agent tooling.
+I build operational software that survives real installers, real users, and real release loops. Current focus: the Qube TX diagnostics line growing native desktop GUIs and tray apps, Goose's Windows lifecycle, and portable agent tooling.
 
 <table width="100%">
 <tr>
@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JULY 2026, selected proof**
 >
-> &middot; **SD-300 v2.0.6, hardware truth and installer lifecycle.** Expanded the Rust system-diagnostics CLI with explicit observation/provenance, live-qualified driver and thermal reporting, and managed install/update/uninstall across Windows, macOS, and Linux. The release qualifies channel-preserving updates, deliberate same-scope reinstalls, ownership cleanup, checksums, and already-current behavior across native packages, managed scripts, and Cargo. [Release](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v2.0.6)
+> &middot; **SD-300 v3.1.2, diagnostics grows a desktop app.** The Rust system-diagnostics tool became a dual-frontend product: a native desktop GUI plus a system-tray app with background monitoring, on top of the existing CLI. It also gained safe in-app and tray-driven self-updates, a click spawns the installed CLI as a detached, windowless coordinator that runs the owner-preserving update transaction from proven absolute paths, never a PATH lookup. Release-workflow guards keep published version tags immutable while post-release docs land cleanly. [Release](https://github.com/QubeTX/qube-system-diagnostics/releases)
 >
-> &middot; **Goose v1.3.3, Windows lifecycle hardening.** Shipped the Rust desktop companion with detached CLI startup, single-instance protection across launch aliases, resilient notification-area recovery after Explorer restarts, and read-only update discovery. The latest release detaches the Windows runtime from terminal jobs and resolves host architecture correctly inside app terminals, so long-running sessions survive closing the shell and Windows still picks the right native installer. [Release](https://github.com/RealEmmettS/goose/releases/tag/v1.3.3)
+> &middot; **Goose v1.3.7, Windows updater and tray polish.** The Rust desktop companion hardened its Windows update delivery: transport-safe updater archive paths, the update helper owning the runtime restart, and a tray notification when an update completes, all on top of detached startup, single-instance protection, and notification-area recovery. Its shared task board also moved to shaughv-tasks 1.0.2. [Release](https://github.com/RealEmmettS/goose/releases)
 >
-> &middot; **shaughv-tasks 1.0, portable agent task boards go stable.** The companion task and workplace-memory layer reached its first stable release, adding titled project boards, board interaction fixes, and bundle upgrades on every task start so dashboards self-repair on resume. It now runs as the shared operating board across the Rust diagnostics line and the goose desktop companion, giving each coding agent the same verified task surface. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
+> &middot; **Portable agent tooling, convergence recovery.** shaughv-tasks reached 1.0.2 with scoped convergence for its project boards, and shaughv-code added a loop-escape convergence-recovery skill so a coding agent that stalls in a retry loop can detect it and break out cleanly. Both run as the shared operating layer across the Rust diagnostics line and the goose desktop companion. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
 
 ---
 
@@ -66,7 +66,7 @@ I build operational software that survives real installers, real users, and real
 ### [Qube TX](https://qubetx.com)
 `Rust` `Installers` `Security` `CI`
 
-Diagnostics tooling and web studio work centered on Rust CLIs that stay honest from hardware probe to public installer. The current line spans TR-300 v4.2.2 machine reporting, ND-300 v3.7.3 network diagnostics / SpeedQX, and SD-300 v2.0.6 system diagnostics. Recent releases preserve proven installer ownership, fail closed on ambiguous state, pin exact artifacts after versionless discovery, ship signed/notarized macOS packages plus native Windows channels, and qualify migrations, reinstalls, rollback, uninstall, checksums, attestations, and already-current JSON on hosted targets and physical Windows hardware.
+Diagnostics tooling and web studio work centered on Rust CLIs that stay honest from hardware probe to public installer. The current line spans TR-300 v4.2.2 machine reporting, ND-300 v3.7.3 network diagnostics / SpeedQX, and SD-300 v3.1.2 system diagnostics, now a dual-frontend product with a native desktop GUI, a system-tray app with background monitoring, and safe in-app and tray-driven self-updates. Releases preserve proven installer ownership, fail closed on ambiguous state, pin exact artifacts after versionless discovery, ship signed/notarized macOS packages plus native Windows channels, keep published version tags immutable, and qualify migrations, reinstalls, rollback, uninstall, checksums, and attestations on hosted targets and physical Windows hardware.
 
 </td>
 <td width="28%" valign="top">
@@ -75,7 +75,7 @@ Diagnostics tooling and web studio work centered on Rust CLIs that stay honest f
 
 [TR-300 v4.2.2](https://github.com/QubeTX/qube-machine-report/releases/tag/v4.2.2)<br>
 [ND-300 v3.7.3](https://github.com/QubeTX/qube-network-diagnostics/releases/tag/v3.7.3)<br>
-[SD-300 v2.0.6](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v2.0.6)<br>
+[SD-300 v3.1.2](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v3.1.2)<br>
 [SpeedQX](https://github.com/QubeTX/speedtest)
 
 </td>
@@ -127,7 +127,7 @@ Recipe URL import
 ### [shaughv-code](https://github.com/RealEmmettS/shaughv-code)
 `Codex` `Skills` `MCP` `Design`
 
-My portable Codex and Claude Code operating kit. shaughv-code v0.35.0 packages brand design, critical thinking, security, audio, Mistral, image, Git, release, and workflow skills with shared MCP integrations. shaughv-tasks reached its first stable 1.0.1 release: titled project boards, milestone-aware task queues, verification gates, multi-board safety, secure local storage, and bundle upgrades on every task start. It now runs as the shared board across the diagnostics line and goose.
+My portable Codex and Claude Code operating kit. shaughv-code packages brand design, critical thinking, security, audio, image, Git, release, and workflow skills with shared MCP integrations, and recently added a loop-escape convergence-recovery skill for agents that stall in retry loops. shaughv-tasks reached 1.0.2 with scoped convergence: titled project boards, milestone-aware task queues, verification gates, multi-board safety, secure local storage, and bundle upgrades on every task start. It runs as the shared board across the diagnostics line and goose.
 
 </td>
 <td width="28%" valign="top">
@@ -135,8 +135,8 @@ My portable Codex and Claude Code operating kit. shaughv-code v0.35.0 packages b
 **Evidence**
 
 [Repository](https://github.com/RealEmmettS/shaughv-code)<br>
-[v0.35.0 manifest](https://github.com/RealEmmettS/shaughv-code/blob/main/.codex-plugin/plugin.json)<br>
-[shaughv-tasks v1.0.1](https://github.com/RealEmmettS/shaughv-tasks/blob/main/.claude-plugin/plugin.json)
+[Skills manifest](https://github.com/RealEmmettS/shaughv-code/blob/main/.codex-plugin/plugin.json)<br>
+[shaughv-tasks v1.0.2](https://github.com/RealEmmettS/shaughv-tasks/blob/main/.claude-plugin/plugin.json)
 
 </td>
 </tr>
@@ -252,11 +252,11 @@ Admin analytics
 
 &nbsp;
 
-- **SD-300 v2.0.6.** Expanded hardware diagnostics, provenance, driver and thermal reporting, then qualified native and managed update, reinstall, migration, rollback, uninstall, checksum, and already-current paths across the public release lanes.
-- **Goose v1.3.3.** Hardened detached Windows startup, single-instance handling, notification-area recovery, read-only update discovery, terminal-host architecture detection, and origin-preserving native installation, then detached the Windows runtime from terminal jobs so sessions outlive the shell.
+- **SD-300 v3.1.2.** Grew the system-diagnostics tool into a dual-frontend product: a native desktop GUI and a system-tray app with background monitoring, plus safe in-app and tray-driven self-updates that spawn the installed CLI as a detached coordinator running the owner-preserving update transaction from proven absolute paths. Release-workflow hardening keeps published version tags immutable while post-release docs land cleanly.
+- **Goose v1.3.7.** Hardened Windows update delivery with transport-safe updater archive paths, the update helper owning the runtime restart, and a tray completion notification, on top of detached startup, single-instance handling, and notification-area recovery, then moved its shared task board to shaughv-tasks 1.0.2.
 - **ND-300 / SpeedQX v3.7.3.** Added a signed, notarized, stapled universal PKG as the direct macOS channel while keeping a byte-identical DMG bridge for immutable older updaters. The 32-asset release passed hosted Intel/Apple Silicon, public Windows-origin, checksum, attestation, and physical Windows update gates.
 - **TR-300 v4.2.2.** Moved ambiguous native Mac ownership checks ahead of package payload mutation, kept Windows current and legacy asset contracts distinct, and made generated PKG lifecycle scripts part of the release lint gate.
-- **shaughv-code v0.35.0 / shaughv-tasks v1.0.1.** The skills bundle now spans the current brand, reasoning, security, media, release, and workflow toolkit; the task plugin reached its first stable 1.0 release with titled project boards, board interaction fixes, and bundle upgrades on every task start, then rolled out as the shared board across the diagnostics repos and goose.
+- **shaughv-code / shaughv-tasks 1.0.2.** The skills bundle added a loop-escape convergence-recovery skill for agents that stall in retry loops on top of the brand, reasoning, security, media, release, and workflow toolkit; the task plugin reached 1.0.2 with scoped convergence over titled project boards, verification gates, and bundle upgrades on every task start, running as the shared board across the diagnostics repos and goose.
 - **Magic Pantry, store push.** A signed Android build and store assets sit on top of the offline-first realtime core, with AI recipe generation and schema-aware URL import prepared for release review.
 
 </details>
@@ -267,7 +267,7 @@ Admin analytics
 &nbsp;
 
 - **SHAUGHV brand system.** `shaughv-cdn` hosts versioned brand assets, fonts, and static/animated mark drop-ins behind a manifest at [`cdn.shaughv.com/tree.json`](https://cdn.shaughv.com/tree.json). `shaughv_vintage` carries the cream-and-sage personal portfolio variant, Pretext text fitting, scrollspy, dot-field motion, and project-level automation.
-- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code`. Version 1.0.1 is the first stable release: titled project boards, milestones, verification gates, shared multi-board safety, secure local storage, and bundle upgrades on every task start across marketplace and skills-only installs.
+- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code`. Version 1.0.2 adds scoped convergence over the first stable line: titled project boards, milestones, verification gates, shared multi-board safety, secure local storage, and bundle upgrades on every task start across marketplace and skills-only installs.
 - **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop companion rebuilt for modern operating systems with the original bundled assets, a milestone-driven engine, audio, hit-testing, foreign-window perch, multi-monitor support, and a CLI/TUI control plane. Native releases are qualified across Windows, macOS, and Linux.
 - **Video and media.** `italy-trip-video` is a Remotion birthday-trip slideshow with timed captions and a CapCut polish path. It was scaffolded through the video workflow in `shaughv-code`.
 - **Web tools.** `qrgen` is a QR-code generator and AI styling surface with a SHAUGHV product UI. `realtime2_test` is an OpenAI Realtime API voice-agent prototype with pure shared handlers across Express and Vercel functions.
