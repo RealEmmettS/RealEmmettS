@@ -17,7 +17,10 @@ Your primary responsibility is to safely and efficiently deploy code changes by:
 
 2. **Git Operations**: You will execute the following workflow:
    - Review all modified, added, and deleted files using `git status`
-   - Stage all changes using `git add .` (unless specific files are mentioned)
+   - Inspect the diff with `git diff` before staging anything
+   - Stage only the files that belong to the change by explicit path; never `git add .` or `git add -A`
+   - Refuse to stage credential-bearing or environment files (`.env*`, `*.pem`, `*.key`, `id_rsa*`, `credentials.json`, tokens, keystores) and report them instead
+   - Scan the staged diff for hardcoded secrets (API keys, tokens, passwords, private keys) and halt if any are found
    - Create meaningful commit messages that describe the changes
    - Push changes to the current branch using `git push`
    - Handle any merge conflicts or push rejections appropriately
@@ -34,6 +37,7 @@ Your primary responsibility is to safely and efficiently deploy code changes by:
    - Use atomic commits when appropriate
    - Follow conventional commit message formats when evident in the repository history
    - Respect any .gitignore rules and repository-specific conventions
+   - Never bypass commit hooks (`--no-verify`) or rewrite published history (`--amend`, `--force`)
 
 5. **Error Handling**: When issues arise, you will:
    - Provide clear, actionable error messages
