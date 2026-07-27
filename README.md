@@ -14,7 +14,7 @@
 
 **Rust diagnostics / agent tooling / full-stack product systems.**
 
-I build operational software that survives real installers, real users, and real release loops. Current focus: the Qube TX diagnostics line growing native desktop GUIs and tray apps, Goose's Windows lifecycle, and portable agent tooling.
+I build operational software that survives real installers, real users, and real release loops. Current focus: shipping the Magic Pantry mobile app to the iOS App Store, the Qube TX diagnostics line and its published CLI lifecycle contract, and portable agent and MCP tooling.
 
 <table width="100%">
 <tr>
@@ -48,11 +48,11 @@ I build operational software that survives real installers, real users, and real
 > [!NOTE]
 > **JULY 2026, selected proof**
 >
-> &middot; **SD-300 v3.1.2, diagnostics grows a desktop app.** The Rust system-diagnostics tool became a dual-frontend product: a native desktop GUI plus a system-tray app with background monitoring, on top of the existing CLI. It also gained safe in-app and tray-driven self-updates, a click spawns the installed CLI as a detached, windowless coordinator that runs the owner-preserving update transaction from proven absolute paths, never a PATH lookup. Release-workflow guards keep published version tags immutable while post-release docs land cleanly. [Release](https://github.com/QubeTX/qube-system-diagnostics/releases)
+> &middot; **Magic Pantry v2.0.4, into the iOS App Store.** The rebuilt cross-platform pantry app moved from store prep into active App Store submission: TestFlight builds live through build 20 and App Review readiness verified. The v2.0.4 candidate adds saved-recipe source links, keyboard-safe list actions, and category/import fixes on top of the offline-first realtime core and Sonnet 5 AI layer.
 >
-> &middot; **Goose v1.3.7, Windows updater and tray polish.** The Rust desktop companion hardened its Windows update delivery: transport-safe updater archive paths, the update helper owning the runtime restart, and a tray notification when an update completes, all on top of detached startup, single-instance protection, and notification-area recovery. Its shared task board also moved to shaughv-tasks 1.0.2. [Release](https://github.com/RealEmmettS/goose/releases)
+> &middot; **Google Health MCP v0.2.0, new public MCP server.** Shipped a TypeScript Model Context Protocol server that brings Google Health data into agent workflows, with encrypted sync, trend surfaces, hardened OAuth, and a Claude token handoff, plus a vintage SHAUGHV health web surface. It runs in production and joins the shaughv-code bundle. [Repository](https://github.com/RealEmmettS/Google-Health-MCP)
 >
-> &middot; **Portable agent tooling, convergence recovery.** shaughv-tasks reached 1.0.2 with scoped convergence for its project boards, and shaughv-code added a loop-escape convergence-recovery skill so a coding agent that stalls in a retry loop can detect it and break out cleanly. Both run as the shared operating layer across the Rust diagnostics line and the goose desktop companion. [shaughv-tasks](https://github.com/RealEmmettS/shaughv-tasks)
+> &middot; **SD-300 v3.1.3 and a published CLI lifecycle contract.** The Rust system-diagnostics tool shipped v3.1.3 with transparent cross-platform app icons, an art-directed macOS mark, deterministic icon validation, and six-target release gates. Alongside it, Qube CLI Lifecycle v2 landed as a public, immutable reference contract for install, update, rollback, and uninstall behavior. [SD-300 v3.1.3](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v3.1.3) &middot; [Lifecycle contract](https://github.com/QubeTX/qube-cli-lifecycle-contract)
 
 ---
 
@@ -66,7 +66,7 @@ I build operational software that survives real installers, real users, and real
 ### [Qube TX](https://qubetx.com)
 `Rust` `Installers` `Security` `CI`
 
-Diagnostics tooling and web studio work centered on Rust CLIs that stay honest from hardware probe to public installer. The current line spans TR-300 v4.2.2 machine reporting, ND-300 v3.7.3 network diagnostics / SpeedQX, and SD-300 v3.1.2 system diagnostics, now a dual-frontend product with a native desktop GUI, a system-tray app with background monitoring, and safe in-app and tray-driven self-updates. Releases preserve proven installer ownership, fail closed on ambiguous state, pin exact artifacts after versionless discovery, ship signed/notarized macOS packages plus native Windows channels, keep published version tags immutable, and qualify migrations, reinstalls, rollback, uninstall, checksums, and attestations on hosted targets and physical Windows hardware.
+Diagnostics tooling and web studio work centered on Rust CLIs that stay honest from hardware probe to public installer. The current line spans TR-300 v4.2.2 machine reporting, ND-300 v3.7.3 network diagnostics / SpeedQX, and SD-300 v3.1.3 system diagnostics, a dual-frontend product with a native desktop GUI, a system-tray app with background monitoring, transparent cross-platform icons, and safe in-app and tray-driven self-updates. Install, update, rollback, and uninstall behavior now has a published, immutable reference contract. Releases preserve proven installer ownership, fail closed on ambiguous state, pin exact artifacts after versionless discovery, ship signed/notarized macOS packages plus native Windows channels, keep published version tags immutable, and qualify reinstalls, rollback, checksums, and attestations on hosted targets and physical Windows hardware.
 
 </td>
 <td width="28%" valign="top">
@@ -75,8 +75,8 @@ Diagnostics tooling and web studio work centered on Rust CLIs that stay honest f
 
 [TR-300 v4.2.2](https://github.com/QubeTX/qube-machine-report/releases/tag/v4.2.2)<br>
 [ND-300 v3.7.3](https://github.com/QubeTX/qube-network-diagnostics/releases/tag/v3.7.3)<br>
-[SD-300 v3.1.2](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v3.1.2)<br>
-[SpeedQX](https://github.com/QubeTX/speedtest)
+[SD-300 v3.1.3](https://github.com/QubeTX/qube-system-diagnostics/releases/tag/v3.1.3)<br>
+[Lifecycle contract](https://github.com/QubeTX/qube-cli-lifecycle-contract)
 
 </td>
 </tr>
@@ -107,16 +107,16 @@ Machine-wide tree view
 ### Magic Pantry
 `Expo` `React Native` `Supabase` `Anthropic`
 
-A rebuilt cross-platform pantry app on Supabase, Expo, Realtime, RLS, and AI edge functions. It is now in store-release prep with a signed Android build and full listing assets, an offline-first collaborative list with durable queue replay and row-level merge, and an AI layer on Sonnet 5 for categorization, recipe generation, substitutions, and schema-aware URL import.
+A rebuilt cross-platform pantry app on Supabase, Expo, Realtime, RLS, and AI edge functions. The v2.0.4 candidate is in active iOS App Store submission, with TestFlight builds live through build 20 and App Review readiness verified. It ships an offline-first collaborative list with durable queue replay and row-level merge, saved-recipe source links, and an AI layer on Sonnet 5 for categorization, recipe generation, substitutions, and schema-aware URL import.
 
 </td>
 <td width="28%" valign="top">
 
 **Evidence**
 
-Store-ready build<br>
-Sonnet 5 AI layer<br>
-Recipe URL import
+iOS App Store submission<br>
+v2.0.4, TestFlight build 20<br>
+Sonnet 5 AI layer
 
 </td>
 </tr>
@@ -127,7 +127,7 @@ Recipe URL import
 ### [shaughv-code](https://github.com/RealEmmettS/shaughv-code)
 `Codex` `Skills` `MCP` `Design`
 
-My portable Codex and Claude Code operating kit. shaughv-code packages brand design, critical thinking, security, audio, image, Git, release, and workflow skills with shared MCP integrations, and recently added a loop-escape convergence-recovery skill for agents that stall in retry loops. shaughv-tasks reached 1.0.2 with scoped convergence: titled project boards, milestone-aware task queues, verification gates, multi-board safety, secure local storage, and bundle upgrades on every task start. It runs as the shared board across the diagnostics line and goose.
+My portable Codex and Claude Code operating kit. shaughv-code reached 1.0 stable with a documented plugin contract and self-routing orchestration, packaging brand design, critical thinking, security, audio, image, Git, release, and workflow skills plus shared MCP integrations, including a loop-escape convergence-recovery skill for agents that stall in retry loops. shaughv-tasks reached 1.1.0 with evidence-aware task contracts on top of scoped convergence: titled project boards, milestone-aware queues, verification gates, multi-board safety, and secure local storage. It runs as the shared board across the diagnostics line, goose, and the Google Health MCP server.
 
 </td>
 <td width="28%" valign="top">
@@ -136,7 +136,7 @@ My portable Codex and Claude Code operating kit. shaughv-code packages brand des
 
 [Repository](https://github.com/RealEmmettS/shaughv-code)<br>
 [Skills manifest](https://github.com/RealEmmettS/shaughv-code/blob/main/.codex-plugin/plugin.json)<br>
-[shaughv-tasks v1.0.2](https://github.com/RealEmmettS/shaughv-tasks/blob/main/.claude-plugin/plugin.json)
+[shaughv-tasks v1.1.0](https://github.com/RealEmmettS/shaughv-tasks/blob/main/.claude-plugin/plugin.json)
 
 </td>
 </tr>
@@ -252,12 +252,14 @@ Admin analytics
 
 &nbsp;
 
-- **SD-300 v3.1.2.** Grew the system-diagnostics tool into a dual-frontend product: a native desktop GUI and a system-tray app with background monitoring, plus safe in-app and tray-driven self-updates that spawn the installed CLI as a detached coordinator running the owner-preserving update transaction from proven absolute paths. Release-workflow hardening keeps published version tags immutable while post-release docs land cleanly.
+- **SD-300 v3.1.3.** Shipped transparent cross-platform app icons, an art-directed transparent-corner macOS mark, an unchanged monochrome tray identity, and deterministic icon validation across the dual-frontend system-diagnostics product, on top of the native desktop GUI, system-tray background monitoring, and safe self-updates. Full local and hosted six-target release gates passed.
+- **Qube CLI Lifecycle v2.** Published a public, reference-only behavioral contract for Qube CLI install, update, rollback, and uninstall, released as an immutable contract version so the diagnostics line has a single documented lifecycle spec.
+- **Google Health MCP v0.2.0.** Released a TypeScript Model Context Protocol server bringing Google Health data into agent workflows, with encrypted sync, trend surfaces, hardened OAuth, a Claude token handoff, and a vintage SHAUGHV health web surface. Running in production and bundled into shaughv-code.
 - **Goose v1.3.7.** Hardened Windows update delivery with transport-safe updater archive paths, the update helper owning the runtime restart, and a tray completion notification, on top of detached startup, single-instance handling, and notification-area recovery, then moved its shared task board to shaughv-tasks 1.0.2.
 - **ND-300 / SpeedQX v3.7.3.** Added a signed, notarized, stapled universal PKG as the direct macOS channel while keeping a byte-identical DMG bridge for immutable older updaters. The 32-asset release passed hosted Intel/Apple Silicon, public Windows-origin, checksum, attestation, and physical Windows update gates.
 - **TR-300 v4.2.2.** Moved ambiguous native Mac ownership checks ahead of package payload mutation, kept Windows current and legacy asset contracts distinct, and made generated PKG lifecycle scripts part of the release lint gate.
-- **shaughv-code / shaughv-tasks 1.0.2.** The skills bundle added a loop-escape convergence-recovery skill for agents that stall in retry loops on top of the brand, reasoning, security, media, release, and workflow toolkit; the task plugin reached 1.0.2 with scoped convergence over titled project boards, verification gates, and bundle upgrades on every task start, running as the shared board across the diagnostics repos and goose.
-- **Magic Pantry, store push.** A signed Android build and store assets sit on top of the offline-first realtime core, with AI recipe generation and schema-aware URL import prepared for release review.
+- **shaughv-code 1.0.1 / shaughv-tasks 1.1.0.** The skills bundle reached 1.0 stable with a documented plugin contract and self-routing orchestration on top of the brand, reasoning, security, media, release, and workflow toolkit; the task plugin reached 1.1.0 with evidence-aware task contracts over scoped convergence, titled project boards, and verification gates, running as the shared board across the diagnostics repos, goose, and the Google Health MCP server.
+- **Magic Pantry v2.0.4, App Store submission.** Moved from store prep into active iOS App Store submission with TestFlight builds live through build 20 and App Review readiness verified, adding saved-recipe source links, keyboard-safe list actions, and category/import fixes on top of the offline-first realtime core and Sonnet 5 AI layer.
 
 </details>
 
@@ -267,7 +269,8 @@ Admin analytics
 &nbsp;
 
 - **SHAUGHV brand system.** `shaughv-cdn` hosts versioned brand assets, fonts, and static/animated mark drop-ins behind a manifest at [`cdn.shaughv.com/tree.json`](https://cdn.shaughv.com/tree.json). `shaughv_vintage` carries the cream-and-sage personal portfolio variant, Pretext text fitting, scrollspy, dot-field motion, and project-level automation.
-- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code`. Version 1.0.2 adds scoped convergence over the first stable line: titled project boards, milestones, verification gates, shared multi-board safety, secure local storage, and bundle upgrades on every task start across marketplace and skills-only installs.
+- **Agent task plugin.** [`shaughv-tasks`](https://github.com/RealEmmettS/shaughv-tasks) is the task-queue and workplace-memory system split out of `shaughv-code`. Version 1.1.0 adds evidence-aware task contracts over the stable line: titled project boards, milestones, verification gates, shared multi-board safety, secure local storage, and bundle upgrades on every task start across marketplace and skills-only installs.
+- **Health data MCP.** [`Google-Health-MCP`](https://github.com/RealEmmettS/Google-Health-MCP) is a public TypeScript Model Context Protocol server that brings Google Health data into agent workflows with encrypted sync, trend surfaces, OAuth hardening, and a Claude token handoff. Version 0.2.0 runs in production behind a vintage SHAUGHV health surface.
 - **goose.** [`goose`](https://github.com/RealEmmettS/goose) is a Rust desktop companion rebuilt for modern operating systems with the original bundled assets, a milestone-driven engine, audio, hit-testing, foreign-window perch, multi-monitor support, and a CLI/TUI control plane. Native releases are qualified across Windows, macOS, and Linux.
 - **Video and media.** `italy-trip-video` is a Remotion birthday-trip slideshow with timed captions and a CapCut polish path. It was scaffolded through the video workflow in `shaughv-code`.
 - **Web tools.** `qrgen` is a QR-code generator and AI styling surface with a SHAUGHV product UI. `realtime2_test` is an OpenAI Realtime API voice-agent prototype with pure shared handlers across Express and Vercel functions.
