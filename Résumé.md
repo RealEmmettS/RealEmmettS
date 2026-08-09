@@ -4,7 +4,7 @@ hey@emmetts.dev
 
 (214) 906-5909
 
-[emmettshaughnessy.com](http://emmettshaughnessy.com)
+[emmettshaughnessy.com](https://emmettshaughnessy.com)
 
 ----
 
