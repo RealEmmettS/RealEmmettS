@@ -5,7 +5,7 @@
 
 I build things I use myself, from a grocery list that works offline to Rust tools that tell me why a machine dropped off the network.
 
-<a href="https://emmettshaughnessy.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio-dark.png"><img src="./assets/portfolio-light.png" width="106" alt="Portfolio"></picture></a>
+<a href="https://shaughv.com"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/portfolio-dark.png"><img src="./assets/portfolio-light.png" width="106" alt="Portfolio"></picture></a>
 <a href="https://resume.emmetts.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/resume-dark.png"><img src="./assets/resume-light.png" width="92" alt="Résumé"></picture></a>
 <a href="mailto:hey@emmetts.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/email-dark.png"><img src="./assets/email-light.png" width="94" alt="Email me"></picture></a>
 
